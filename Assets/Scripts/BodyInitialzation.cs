@@ -34,6 +34,9 @@ public class BodyInitialzation : MonoBehaviour {
         gameObject.transform.position = new Vector3(0,
                                                     scaledDistance * Mathf.Sin(Mathf.Deg2Rad * orbitalInclination),
                                                     scaledDistance * Mathf.Cos(Mathf.Deg2Rad * orbitalInclination));
+        gameObject.transform.rotation = new Quaternion();
+        gameObject.transform.Rotate(new Vector3(1, 0, 0), orbitObliquity);
+
         gameObject.transform.localScale = new Vector3(1, 1, 1);
 	}
 }
