@@ -1,25 +1,12 @@
 ﻿<Properties StartupConfiguration="{40E3F4A2-9C65-40E6-F4FB-0ADAC82D07EF}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gravity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PhysicsCalculation.cs">
     <Files>
-      <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="31" Column="9" />
-      <File FileName="Assets/Scripts/Gravity.cs" Line="32" Column="33" />
-      <File FileName="Assets/Scripts/Lighting.cs" Line="17" Column="2" />
-      <File FileName="Assets/Scripts/Rotation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="14" Column="33" />
+      <File FileName="Assets/Scripts/Lighting.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/Rotation.cs" Line="9" Column="32" />
+      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Star_Thing_Unity" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Gravity.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
