@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour {
 
-    public GameObject BodiesManager;
+    private GameObject BodyManager;
     private BodyInitialzation Constants;
 
 	void Start () {
-        Constants = BodiesManager.GetComponent<BodyInitialzation>();
+        BodyManager = GameObject.Find("BodyManager");
+        Constants = BodyManager.GetComponent<BodyInitialzation>();
 	}
 	
 	void FixedUpdate () {
+        //rotate planet around y axis, which is tilted with respect to world space
         gameObject.transform.Rotate(0, Time.fixedDeltaTime / Constants.GetRotationPeriod(gameObject.name)*3600, 0);
 	}
 }

@@ -164,11 +164,12 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrVRHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+    <Compile Include="Assets\Scripts\AddTexture.cs" />
     <Compile Include="Assets\Scripts\BodyInitialzation.cs" />
     <Compile Include="Assets\Scripts\Lighting.cs" />
     <Compile Include="Assets\Scripts\PhysicsCalculation.cs" />
     <Compile Include="Assets\Scripts\Rotation.cs" />
-    <None Include="Assets\Body_Data.txt" />
+    <None Include="Assets\Resources\Body_Data.txt" />
     <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />

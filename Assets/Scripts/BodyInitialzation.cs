@@ -20,24 +20,17 @@ public class BodyInitialzation : MonoBehaviour {
     private List<float> orbitObliquities = new List<float>();
     private List<float> scaledRadii = new List<float>();
 
-    float distanceScalar;
-    float massScalar;
     float velocityScalar;
-    float radiusScalar;
 
 	// Use this for initialization
 	void Start () {
 
         //Read data file in Assets
-        ReadCSV();
+        ReadCSV2();
 
         //Read constants from Physics Script
         Constants = gameObject.GetComponent<PhysicsCalculation>();
-        distanceScalar = Constants.distanceScalar;
-        massScalar = Constants.massScalar;
         velocityScalar = Constants.velocityScalar;
-        radiusScalar = Constants.radiusScalar;
-
 
         //Create objects with given values
         for (int i = 0; i < names.Count; i++){
@@ -53,8 +46,11 @@ public class BodyInitialzation : MonoBehaviour {
             holderObject.GetComponent<Rigidbody>().mass = scaledMasses[i];
             //Set velocity
             holderObject.GetComponent<Rigidbody>().velocity = new Vector3(scaledVelocities[i]/velocityScalar, 0, 0);
+
             //Set scale
-            holderObject.transform.localScale = new Vector3(scaledRadii[i], scaledRadii[i], scaledRadii[i]);
+            //holderObject.transform.localScale = new Vector3(scaledRadii[i], scaledRadii[i], scaledRadii[i]);
+            holderObject.transform.localScale = new Vector3(1, 1, 1);
+
             //Set name
             holderObject.name = names[i];
 
@@ -63,38 +59,34 @@ public class BodyInitialzation : MonoBehaviour {
 
 	}
 
-    void ReadCSV(){
-        //Find file address
-        string[] fileGUID = AssetDatabase.FindAssets("Body_Data");
-        //SETUP ERROR DETECTION
+    void ReadCSV2(){
+        //Load text file
+        TextAsset file = Resources.Load<TextAsset>("Body_Data");
 
-        //Convert address into file path for Stream
-        string filePath = AssetDatabase.GUIDToAssetPath(fileGUID[0]);
+        //Split text into lines
+        string[] lines = file.text.Split('\n');
+        foreach (string line in lines){
 
-        //Setup StreamReader
-        using (FileStream fileStream = new FileStream(filePath, FileMode.Open)){
-            using(StreamReader readStream = new StreamReader(fileStream)){
-                while(!readStream.EndOfStream){
+            //Split lines into values separated by commas
+            string[] values = line.Split(',');
 
-                    //Split lines into values separated by commas
-                    string[] values = readStream.ReadLine().Split(',');
-
-                    //Add values to respective lists for body initialization
-                    names.Add(values[0]);
-                    scaledMasses.Add(float.Parse(values[1]));
-                    scaledDistances.Add(float.Parse(values[2]));
-                    scaledVelocities.Add(float.Parse(values[3]));
-                    rotationPeriods.Add(float.Parse(values[4]));
-                    orbitalInclinations.Add(float.Parse(values[5]));
-                    orbitObliquities.Add(float.Parse(values[6]));
-                    scaledRadii.Add(float.Parse(values[7]));
-                }
-            }
+            //Add values to respective lists for body initialization
+            names.Add(values[0]);
+            scaledMasses.Add(float.Parse(values[1]));
+            scaledDistances.Add(float.Parse(values[2]));
+            scaledVelocities.Add(float.Parse(values[3]));
+            rotationPeriods.Add(float.Parse(values[4]));
+            orbitalInclinations.Add(float.Parse(values[5]));
+            orbitObliquities.Add(float.Parse(values[6]));
+            scaledRadii.Add(float.Parse(values[7]));
         }
     }
 
     public float GetRotationPeriod(string name){
+        //Search name list to identify body
         int index = names.IndexOf(name);
+
+        //return rotation period for correct body
         return rotationPeriods[index];
     }
 }
