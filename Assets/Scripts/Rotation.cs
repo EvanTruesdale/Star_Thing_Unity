@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour {
 
+    public GameObject BodiesManager;
     private BodyInitialzation Constants;
 
-	// Use this for initialization
-	//void Start () {
- //       Constants = gameObject.GetComponent<BodyInitialzation>();
-	//}
+	void Start () {
+        Constants = BodiesManager.GetComponent<BodyInitialzation>();
+	}
 	
-	//// Update is called once per frame
-	//void FixedUpdate () {
- //       gameObject.transform.Rotate(0, Time.fixedDeltaTime / Constants.rotationPeriod*3600, 0);
-	//}
+	void FixedUpdate () {
+        gameObject.transform.Rotate(0, Time.fixedDeltaTime / Constants.GetRotationPeriod(gameObject.name)*3600, 0);
+	}
 }

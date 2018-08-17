@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PhysicsCalculation : MonoBehaviour {
-
-    private List<GameObject> Bodies = new List<GameObject>();
+    
+    public List<GameObject> Bodies = new List<GameObject>();
     public float G;
     public float distanceScalar;
     public float massScalar;
@@ -13,7 +13,6 @@ public class PhysicsCalculation : MonoBehaviour {
 
     private void Start()
     {
-        Bodies.AddRange(GameObject.FindGameObjectsWithTag("Body"));
         Bodies.Add(GameObject.FindGameObjectWithTag("Sun"));
     }
 
@@ -30,12 +29,11 @@ public class PhysicsCalculation : MonoBehaviour {
                     Vector3 difference = position1 - position2;
 
                     float magnitude = G*mass1*mass2 / Mathf.Pow(difference.magnitude, 2);
-                    print(magnitude);
 
                     difference = difference.normalized;
                     difference *= magnitude/massScalar;
 
-                    Body1.GetComponent<Rigidbody>().AddForce(difference);
+                    Body2.GetComponent<Rigidbody>().AddForce(difference);
                 }
             }
         }

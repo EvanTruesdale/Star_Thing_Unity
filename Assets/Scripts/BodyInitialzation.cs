@@ -57,6 +57,8 @@ public class BodyInitialzation : MonoBehaviour {
             holderObject.transform.localScale = new Vector3(scaledRadii[i], scaledRadii[i], scaledRadii[i]);
             //Set name
             holderObject.name = names[i];
+
+            Constants.Bodies.Add(holderObject);
         }
 
 	}
@@ -65,6 +67,7 @@ public class BodyInitialzation : MonoBehaviour {
         //Find file address
         string[] fileGUID = AssetDatabase.FindAssets("Body_Data");
         //SETUP ERROR DETECTION
+
         //Convert address into file path for Stream
         string filePath = AssetDatabase.GUIDToAssetPath(fileGUID[0]);
 
@@ -88,5 +91,10 @@ public class BodyInitialzation : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public float GetRotationPeriod(string name){
+        int index = names.IndexOf(name);
+        return rotationPeriods[index];
     }
 }
