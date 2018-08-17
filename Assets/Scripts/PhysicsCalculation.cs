@@ -21,18 +21,21 @@ public class PhysicsCalculation : MonoBehaviour {
         foreach (GameObject Body1 in Bodies){
             foreach (GameObject Body2 in Bodies){
                 if (Body1 != Body2){
+                    
                     Vector3 position1 = Body1.transform.position * distanceScalar;
                     Vector3 position2 = Body2.transform.position * distanceScalar;
                     float mass1 = Body1.GetComponent<Rigidbody>().mass * massScalar;
                     float mass2 = Body2.GetComponent<Rigidbody>().mass * massScalar;
 
                     Vector3 difference = position1 - position2;
+
                     float magnitude = G*mass1*mass2 / Mathf.Pow(difference.magnitude, 2);
+                    print(magnitude);
 
                     difference = difference.normalized;
                     difference *= magnitude/massScalar;
 
-                    Body2.GetComponent<Rigidbody>().AddForce(difference);
+                    Body1.GetComponent<Rigidbody>().AddForce(difference);
                 }
             }
         }

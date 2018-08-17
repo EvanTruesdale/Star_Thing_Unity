@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 413244795}
   m_Layer: 0
   m_Name: Sun
-  m_TagString: Body
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   G: 6.67e-11
   distanceScalar: 1e+10
   massScalar: 1e+24
-  velocityScalar: 100000
+  velocityScalar: 100000000
   radiusScalar: 100000000
 --- !u!114 &1240899677
 MonoBehaviour:

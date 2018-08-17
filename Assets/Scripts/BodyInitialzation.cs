@@ -38,28 +38,6 @@ public class BodyInitialzation : MonoBehaviour {
         velocityScalar = Constants.velocityScalar;
         radiusScalar = Constants.radiusScalar;
 
-        ////Create objects with given values
-        //for (int i = 0; i < names.Count; i++){
-        //    //Holder object for Transform and Rigidbody modifications
-        //    GameObject holderObject = new GameObject();
-        //    //Set position
-        //    holderObject.transform.position = new Vector3(0,
-        //                                                  scaledDistances[i] * Mathf.Sin(Mathf.Deg2Rad * orbitalInclinations[i]),
-        //                                                  scaledDistances[i] * Mathf.Cos(Mathf.Deg2Rad * orbitalInclinations[i]));
-        //    //Set rotation
-        //    holderObject.transform.rotation = new Quaternion();
-        //    holderObject.transform.Rotate(new Vector3(1, 0, 0), orbitObliquities[i]);
-        //    //Set scale
-        //    holderObject.transform.localScale = new Vector3(scaledRadii[i], scaledRadii[i], scaledRadii[i]);
-
-        //    //Create object
-        //    Instantiate(BodyPrefab, holderObject.transform).name = names[i];
-
-        //    //Set mass
-        //    holderObject.GetComponent<Rigidbody>().mass = scaledMasses[i];
-        //    //Set velocity
-        //    holderObject.GetComponent<Rigidbody>().velocity = new Vector3(scaledVelocities[i]/velocityScalar, 0, 0);
-        //}
 
         //Create objects with given values
         for (int i = 0; i < names.Count; i++){
