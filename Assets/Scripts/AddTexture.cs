@@ -13,5 +13,9 @@ public class AddTexture : MonoBehaviour {
             texturePath = gameObject.name + "_Atmosphere_Texture";
             GetComponent<Renderer>().material.SetTexture("_DETAIL_MULX2", (Texture)Resources.Load(texturePath));
         }
+        if(gameObject.name == "Earth"){
+            texturePath = gameObject.name + "_Normal";
+            GetComponent<Renderer>().material.SetTexture("_DetailNormalMap", (Texture)Resources.Load(texturePath));
+        }
 	}
 }

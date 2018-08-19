@@ -64,7 +64,6 @@ public class BodyInitialzation : MonoBehaviour {
             holderObject.GetComponent<Rigidbody>().mass = scaledMasses[i];
             //Set velocity, calculated specifically for APHELION by program
             float velocityAdjustment = (2 / ((scaledDistances[i] * distanceScalar) * (1 + orbitalEccentricities[i]))) - 1 / (scaledDistances[i] * distanceScalar);
-            print(velocityAdjustment);
             holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sqrt(Constants.G * Sun.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
                                                                           0, 0);
 
