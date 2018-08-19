@@ -61,8 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GoogleVR\Demos\Editor\DemoInputManagerEditor.cs" />
-    <Compile Include="Assets\GoogleVR\Demos\Editor\PermissionsDemoBuildProcessor.cs" />
     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrControllerVisualEditor.cs" />
     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrLaserPointerEditor.cs" />
     <Compile Include="Assets\GoogleVR\Editor\Controller\GvrLaserVisualEditor.cs" />

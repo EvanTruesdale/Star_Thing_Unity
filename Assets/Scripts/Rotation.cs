@@ -14,6 +14,6 @@ public class Rotation : MonoBehaviour {
 	
 	void FixedUpdate () {
         //rotate planet around y axis, which is tilted with respect to world space
-        gameObject.transform.Rotate(0, Time.fixedDeltaTime / Constants.GetRotationPeriod(gameObject.name)*3600, 0);
+        gameObject.transform.Rotate(0, -1 * Time.fixedDeltaTime / Constants.GetRotationPeriod(gameObject.name)*3600, 0);
 	}
 }
