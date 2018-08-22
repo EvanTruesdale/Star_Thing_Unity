@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{40E3F4A2-9C65-40E6-F4FB-0ADAC82D07EF}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AddTexture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuActions.cs">
     <Files>
-      <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="97" Column="41" />
-      <File FileName="Assets/Scripts/Lighting.cs" Line="15" Column="2" />
-      <File FileName="Assets/Scripts/Rotation.cs" Line="10" Column="17" />
-      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="32" Column="21" />
+      <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="4" Column="19" />
+      <File FileName="Assets/Scripts/Lighting.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Rotation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AddTexture.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MenuController.cs" Line="21" Column="10" />
+      <File FileName="Assets/Scripts/MenuActions.cs" Line="1" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Assets/Scripts/Lighting.cs" relfile="Assets/Scripts/Lighting.cs" line="23" column="5" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

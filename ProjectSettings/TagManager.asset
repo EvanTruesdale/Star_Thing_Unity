@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Body
   - Sun
+  - MainMenu
+  - SpeedSlider
   layers:
   - Default
   - TransparentFX
