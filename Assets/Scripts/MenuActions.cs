@@ -27,5 +27,4 @@ public class MenuActions : MonoBehaviour
             Slider.GetComponent<Slider>().value = newSpeed;
         }
     }
-
 }

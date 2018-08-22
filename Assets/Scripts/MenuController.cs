@@ -55,5 +55,9 @@ namespace Assets.Scripts
         public static void SetSpeed(float input){
             speed = input;
         }
+
+        public static float GetSpeed(){
+            return speed;
+        }
     }
 }
