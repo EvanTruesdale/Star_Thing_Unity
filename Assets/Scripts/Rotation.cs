@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
 
-public class Rotation : MonoBehaviour {
+public class Rotation : MonoBehaviour
+{
 
     private GameObject BodyManager;
     private BodyInitialzation Constants;
 
-	void Start () {
+    void Start()
+    {
         BodyManager = GameObject.Find("BodyManager");
         Constants = BodyManager.GetComponent<BodyInitialzation>();
-	}
-	
-	void FixedUpdate () {
+    }
+
+    void FixedUpdate()
+    {
         //rotate planet around y axis, which is tilted with respect to world space
-        gameObject.transform.Rotate(0, -1 * Time.fixedDeltaTime / Constants.GetRotationPeriod(gameObject.name)*3600, 0);
-	}
+        gameObject.transform.Rotate(0, -1 * Time.fixedDeltaTime / Constants.GetRotationPeriod(gameObject.name) * 3600, 0);
+    }
 }

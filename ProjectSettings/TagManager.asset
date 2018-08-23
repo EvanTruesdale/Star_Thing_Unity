@@ -8,6 +8,9 @@ TagManager:
   - Sun
   - MainMenu
   - SpeedSlider
+  - ScaleSlider
+  - SpeedText
+  - ScaleText
   layers:
   - Default
   - TransparentFX

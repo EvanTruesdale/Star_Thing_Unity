@@ -26,5 +26,28 @@ public class MenuActions : MonoBehaviour
         {
             Slider.GetComponent<Slider>().value = newSpeed;
         }
+
+        GameObject[] Texts = GameObject.FindGameObjectsWithTag("SpeedText");
+        foreach (GameObject Text in Texts)
+        {
+            Text.GetComponent<Text>().text = "Speed: " + newSpeed;
+        }
+    }
+
+    public void ChangeScale()
+    {
+        float newScale = gameObject.GetComponent<Slider>().value;
+        MenuController.SetScale(newScale);
+        GameObject[] Sliders = GameObject.FindGameObjectsWithTag("ScaleSlider");
+        foreach (GameObject Slider in Sliders)
+        {
+            Slider.GetComponent<Slider>().value = newScale;
+        }
+
+        GameObject[] Texts = GameObject.FindGameObjectsWithTag("ScaleText");
+        foreach (GameObject Text in Texts)
+        {
+            Text.GetComponent<Text>().text = "Scale: " + newScale;
+        }
     }
 }
