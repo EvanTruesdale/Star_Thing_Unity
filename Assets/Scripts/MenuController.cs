@@ -19,7 +19,7 @@ namespace Assets.Scripts
 
         void Start()
         {
-            PlayerTransform = GameObject.Find("Player").transform;
+            PlayerTransform = GameObject.Find("Main Camera").transform;
             MainMeunPrefab = Resources.Load<GameObject>("MainMenuPrefab");
             isMenuOpen = false;
         }
@@ -37,10 +37,10 @@ namespace Assets.Scripts
             isMenuOpen = true;
 
             Vector3 menuPosition = PlayerTransform.position + PlayerTransform.forward * distance;
-            Instantiate(MainMeunPrefab, menuPosition, Quaternion.Euler(0, 90, 0));
+            Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.forward));
 
             menuPosition = PlayerTransform.position + PlayerTransform.forward * -distance;
-            Instantiate(MainMeunPrefab, menuPosition, Quaternion.Euler(0, -90, 0));
+            Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(-PlayerTransform.forward));
 
             GameObject[] SpeedSliders = GameObject.FindGameObjectsWithTag("SpeedSlider");
             foreach (GameObject Slider in SpeedSliders)

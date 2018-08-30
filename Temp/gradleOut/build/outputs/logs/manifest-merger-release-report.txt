@@ -31,16 +31,16 @@ ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/g
 		ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml:3:135-160
 application
 ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml:4:3-18:17
-MERGED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:11:5-29:19
-MERGED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:11:5-28:19
+MERGED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:11:5-29:19
+MERGED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:11:5-28:19
 	android:label
 		ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml:4:50-82
 	android:supportsRtl
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:14:9-35
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:14:9-35
 	android:icon
 		ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml:4:16-49
 	android:allowBackup
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:12:9-35
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:12:9-35
 	android:banner
 		ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml:4:105-142
 	android:theme
@@ -141,11 +141,11 @@ ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/g
 		ADDED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml:24:17-80
 uses-sdk
 INJECTED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [:gvr-keyboard:] /Users/evantruesdale/.android/build-cache/062cd77af5e932b410b8bf5bb19b755e5dc37afc/output/AndroidManifest.xml:7:5-9:41
-MERGED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:7:5-9:41
-MERGED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:7:5-9:41
-MERGED from [:gvr:] /Users/evantruesdale/.android/build-cache/a44ea06b42558c47b870c3c6f4bc6e3a379a573e/output/AndroidManifest.xml:5:5-7:41
-MERGED from [:unitygvr:] /Users/evantruesdale/.android/build-cache/c3482a0fa72e4de88d8323d1facda83aa2137440/output/AndroidManifest.xml:7:5-9:41
+MERGED from [:gvr-keyboard:] /Users/evantruesdale/.android/build-cache/a360abd6bb2b565b21d4d8b0f7378727ac54fb93/output/AndroidManifest.xml:7:5-9:41
+MERGED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:7:5-9:41
+MERGED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:7:5-9:41
+MERGED from [:gvr:] /Users/evantruesdale/.android/build-cache/ae27ba5e40caf3991c99ac2f63689c22e37a43de/output/AndroidManifest.xml:5:5-7:41
+MERGED from [:unitygvr:] /Users/evantruesdale/.android/build-cache/e439a2b40954b90ca8ddb320449b8b9628c3156b/output/AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
 		INJECTED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml
 		INJECTED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml
@@ -153,34 +153,34 @@ MERGED from [:unitygvr:] /Users/evantruesdale/.android/build-cache/c3482a0fa72e4
 		INJECTED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml
 		INJECTED from /Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/src/main/AndroidManifest.xml
 activity#com.google.gvr.keyboardsupport.TransitionVRActivity
-ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:17:9-28:20
+ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:17:9-28:20
 	android:enableVrMode
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:20:13-106
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:20:13-106
 	android:label
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:22:13-45
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:22:13-45
 	android:exported
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:21:13-37
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:21:13-37
 	android:resizeableActivity
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:23:13-47
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:23:13-47
 	android:configChanges
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:19:13-59
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:19:13-59
 	android:name
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:18:13-79
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:18:13-79
 intent-filter#android.intent.category.LAUNCHER+com.google.intent.category.DAYDREAM
-ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:24:13-27:29
+ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:24:13-27:29
 category#com.google.intent.category.DAYDREAM
-ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:26:17-80
+ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:26:17-80
 	android:name
-		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/bf6ff05f69a2f2574a83d2b30bbe21e8ca0e1352/output/AndroidManifest.xml:26:27-77
+		ADDED from [:gvr-keyboardsupport-release:] /Users/evantruesdale/.android/build-cache/efcf4f7eeda37d9131112a814434e135d80e85cc/output/AndroidManifest.xml:26:27-77
 activity#com.google.gvr.permissionsupport.TransitionVRActivity
-ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:17:9-27:20
+ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:17:9-27:20
 	android:enableVrMode
-		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:20:13-106
+		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:20:13-106
 	android:label
-		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:22:13-45
+		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:22:13-45
 	android:exported
-		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:21:13-37
+		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:21:13-37
 	android:configChanges
-		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:19:13-59
+		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:19:13-59
 	android:name
-		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/969bf5e85aae6d4b5799f917ac53f6e96145e328/output/AndroidManifest.xml:18:13-81
+		ADDED from [:gvr-permissionsupport-release:] /Users/evantruesdale/.android/build-cache/b0bb1e0fd6a22b02527dd7e57407d550f0325e46/output/AndroidManifest.xml:18:13-81
