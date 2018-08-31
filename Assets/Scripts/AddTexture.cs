@@ -15,5 +15,12 @@ public class AddTexture : MonoBehaviour
             texturePath = gameObject.name + "_Atmosphere_Texture";
             GetComponent<Renderer>().material.SetTexture("_DETAIL_MULX2", (Texture)Resources.Load(texturePath));
         }
+        if(gameObject.name == "Tesla Roadster"){
+            GameObject child = Instantiate(Resources.Load<GameObject>("Tesla_Roadster_Model"));
+            child.transform.parent = gameObject.transform;
+            child.transform.localPosition = new Vector3(0, 0, -3f);
+            child.transform.localRotation = new Quaternion();
+            child.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
