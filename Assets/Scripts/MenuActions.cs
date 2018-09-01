@@ -50,4 +50,17 @@ public class MenuActions : MonoBehaviour
             Text.GetComponent<Text>().text = "Scale: " + newScale;
         }
     }
+
+    public void ChangeCentralBody()
+    {
+        foreach(GameObject Body in PhysicsCalculation.GetBodies())
+        {
+            Body.GetComponentInChildren<TrailRenderer>().enabled = true;
+        }
+        string text = GetComponent<Dropdown>().options[GetComponent<Dropdown>().value].text;
+        MenuController.SetCentralBody(text);
+
+        GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
+        CloseMainMenu();
+    }
 }
