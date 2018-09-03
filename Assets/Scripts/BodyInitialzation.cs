@@ -9,28 +9,75 @@ namespace Assets.Scripts
     public class BodyInitialzation : MonoBehaviour
     {
 
-        //Use data from Planetary Fact Sheet
         public GameObject BodyPrefab;
         private List<GameObject> Bodies = new List<GameObject>();
         private GameObject Sun;
         private PhysicsCalculation Constants;
-        static List<string> names = new List<string>();
-        private List<float> scaledMasses = new List<float>();
 
-        //using semi-major axis for distance, reference ReadCSV function for details
-        private List<float> scaledDistances = new List<float>();
-        private List<float> scaledVelocities = new List<float>();
-        private List<float> rotationPeriods = new List<float>();
-        private List<float> orbitalInclinations = new List<float>();
-        private List<float> orbitalEccentricities = new List<float>();
-        private List<float> orbitObliquities = new List<float>();
+        //Values read from the TXT file
+        static List<string> names = new List<string>();
+        static List<float> scaledMasses = new List<float>();
+        static List<float> scaledDistances = new List<float>();   //using semi-major axis for distance, reference ReadCSV function for details
+        static List<float> scaledVelocities = new List<float>();
+        static List<float> rotationPeriods = new List<float>();
+        static List<float> orbitalInclinations = new List<float>();
+        static List<float> orbitalEccentricities = new List<float>();
+        static List<float> orbitObliquities = new List<float>();
         static List<float> scaledRadii = new List<float>();
+
+        //Access methods for TXT file data
+        public static float GetScaledMass(string name)
+        {
+            int index = names.IndexOf(name);
+            return scaledMasses[index];
+        }
+
+        public static float GetScaledDistance(string name)
+        {
+            int index = names.IndexOf(name);
+            return scaledDistances[index];
+        }
+
+        public static float GetScaledVelocity(string name)
+        {
+            int index = names.IndexOf(name);
+            return scaledVelocities[index];
+        }
+
+        public static float GetRotationPeriod(string name)
+        {
+            int index = names.IndexOf(name);
+            return rotationPeriods[index];
+        }
+
+        public static float GetOrbitalInclination(string name)
+        {
+            int index = names.IndexOf(name);
+            return orbitalInclinations[index];
+        }
+
+        public static float GetOrbitalEccentricity(string name)
+        {
+            int index = names.IndexOf(name);
+            return orbitalEccentricities[index];
+        }
+
+        public static float GetOrbitObliquity(string name)
+        {
+            int index = names.IndexOf(name);
+            return orbitObliquities[index];
+        }
+
+        public static float GetScaledRadius(string name)
+        {
+            int index = names.IndexOf(name);
+            return scaledRadii[index];
+        }
 
         float velocityScalar;
         float distanceScalar;
         float massScalar;
 
-        // Use this for initialization
         void Start()
         {
 
@@ -79,12 +126,17 @@ namespace Assets.Scripts
                 //Set name
                 holderObject.name = names[i];
 
+                //Add body to PhysicsCalculation Bodies list
                 Constants.AddBody(holderObject);
             }
+
         }
 
         void ReadCSV()
         {
+            //Data from Planetary Fact Sheet https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+            //Tesla Data from HORIZONS Web Interface https://ssd.jpl.nasa.gov/horizons.cgi#results
+
             //Load text file
             TextAsset file = Resources.Load<TextAsset>("Body_Data");
 
@@ -110,24 +162,6 @@ namespace Assets.Scripts
             }
         }
 
-        public float GetRotationPeriod(string name)
-        {
-            //Search name list to identify body
-            int index = names.IndexOf(name);
-
-            //return rotation period for correct body
-            return rotationPeriods[index];
-        }
-
-        public static List<string> GetNames()
-        {
-            return names;
-        }
-
-        public static List<float> GetRadii()
-        {
-            return scaledRadii;
-        }
     }
 
 }

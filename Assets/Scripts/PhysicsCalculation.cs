@@ -7,7 +7,9 @@ namespace Assets.Scripts
     public class PhysicsCalculation : MonoBehaviour
     {
 
+        //This is the Main collection of Bodies
         static List<GameObject> Bodies = new List<GameObject>();
+        //Constants
         public float G;
         public float distanceScalar;
         public float massScalar;
@@ -16,6 +18,7 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            //Add Sun to Bodies List (doesn't come from data sheet)
             Bodies.Add(GameObject.FindGameObjectWithTag("Sun"));
         }
 
@@ -27,25 +30,30 @@ namespace Assets.Scripts
                 {
                     if (Body1 != Body2)
                     {
-
+                        //Get real positions of planets
                         Vector3 position1 = Body1.transform.position * distanceScalar;
                         Vector3 position2 = Body2.transform.position * distanceScalar;
+                        //Get real masses of planets
                         float mass1 = Body1.GetComponent<Rigidbody>().mass * massScalar;
                         float mass2 = Body2.GetComponent<Rigidbody>().mass * massScalar;
 
+                        //Calculate difference Vector
                         Vector3 difference = position1 - position2;
-
+                        //Calculate Magnitude
                         float magnitude = G * mass1 * mass2 / Mathf.Pow(difference.magnitude, 2);
 
+                        //Scale Force back down for Rigidbody
                         difference = difference.normalized;
                         difference *= magnitude / massScalar;
 
+                        //Add Force to Rigidbody
                         Body2.GetComponent<Rigidbody>().AddForce(difference);
                     }
                 }
             }
         }
 
+        //Function to Read Bodies, with and without Sun
         public static List<GameObject> GetBodies(bool includeSun = false)
         {
             List<GameObject> ReturnBodies = new List<GameObject>(Bodies);
@@ -56,6 +64,7 @@ namespace Assets.Scripts
             return ReturnBodies;
         }
 
+        //Add Body function
         public void AddBody(GameObject Body)
         {
             Bodies.Add(Body);

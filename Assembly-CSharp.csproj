@@ -152,6 +152,7 @@
     <Compile Include="Assets\Scripts\MenuActions.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\PhysicsCalculation.cs" />
+    <Compile Include="Assets\Scripts\ReticleController.cs" />
     <Compile Include="Assets\Scripts\Rotation.cs" />
     <Compile Include="Assets\Scripts\TrailActions.cs" />
     <None Include="Assets\Textures\Resources\Body_Data.txt" />

@@ -7,6 +7,7 @@ using Assets.Scripts;
 public class MenuActions : MonoBehaviour
 {
 
+    //Close All Menus
     public void CloseMainMenu()
     {
         GameObject[] Menus = GameObject.FindGameObjectsWithTag("MainMenu");
@@ -15,8 +16,10 @@ public class MenuActions : MonoBehaviour
             Destroy(Menu);
         }
         MenuController.SetMenuState(false);
+        GameObject.Find("GvrReticlePointer").GetComponent<MeshRenderer>().enabled = false;
     }
 
+    //Update Speed
     public void ChangeSpeed()
     {
         float newSpeed = gameObject.GetComponent<Slider>().value;
@@ -34,6 +37,7 @@ public class MenuActions : MonoBehaviour
         }
     }
 
+    //Update Scale
     public void ChangeScale()
     {
         float newScale = gameObject.GetComponent<Slider>().value;
@@ -51,11 +55,13 @@ public class MenuActions : MonoBehaviour
         }
     }
 
+    //Update Central Body
     public void ChangeCentralBody()
     {
-        foreach(GameObject Body in PhysicsCalculation.GetBodies())
+        foreach (GameObject Body in PhysicsCalculation.GetBodies())
         {
             Body.GetComponentInChildren<TrailRenderer>().enabled = true;
+            MenuController.SetScale(1);
         }
         string text = GetComponent<Dropdown>().options[GetComponent<Dropdown>().value].text;
         MenuController.SetCentralBody(text);

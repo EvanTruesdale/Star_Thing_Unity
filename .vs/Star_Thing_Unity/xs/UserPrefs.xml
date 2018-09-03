@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{40E3F4A2-9C65-40E6-F4FB-0ADAC82D07EF}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TrailActions.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ReticleController.cs">
     <Files>
       <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Rotation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AddTexture.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MenuController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MenuActions.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/TrailActions.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="47" Column="10" />
+      <File FileName="Assets/Scripts/AddTexture.cs" Line="21" Column="64" />
+      <File FileName="Assets/Scripts/MenuController.cs" Line="49" Column="49" />
+      <File FileName="Assets/Scripts/MenuActions.cs" Line="18" Column="91" />
+      <File FileName="Assets/Scripts/TrailActions.cs" Line="10" Column="2" />
+      <File FileName="Assets/Scripts/ReticleController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

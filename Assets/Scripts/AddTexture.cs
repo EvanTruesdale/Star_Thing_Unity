@@ -7,15 +7,18 @@ public class AddTexture : MonoBehaviour
 
     void Start()
     {
+        //Standard Textures
         string texturePath = gameObject.name + "_Texture";
         GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture)Resources.Load(texturePath));
 
+        //Planetary Add-Ons
         if (gameObject.name == "Venus")
         {
             texturePath = gameObject.name + "_Atmosphere_Texture";
             GetComponent<Renderer>().material.SetTexture("_DETAIL_MULX2", (Texture)Resources.Load(texturePath));
         }
-        if(gameObject.name == "Tesla Roadster"){
+        if (gameObject.name == "Tesla Roadster")
+        {
             GameObject child = Instantiate(Resources.Load<GameObject>("Tesla_Roadster_Model"));
             child.transform.parent = gameObject.transform;
             child.transform.localPosition = new Vector3(0, 0, -3f);
