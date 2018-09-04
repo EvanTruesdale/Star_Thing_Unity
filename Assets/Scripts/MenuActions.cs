@@ -11,7 +11,12 @@ public class MenuActions : MonoBehaviour
     public void CloseMainMenu()
     {
         GameObject[] Menus = GameObject.FindGameObjectsWithTag("MainMenu");
+        GameObject[] InfoMenus = GameObject.FindGameObjectsWithTag("InfoMenu");
         foreach (GameObject Menu in Menus)
+        {
+            Destroy(Menu);
+        }
+        foreach (GameObject Menu in InfoMenus)
         {
             Destroy(Menu);
         }

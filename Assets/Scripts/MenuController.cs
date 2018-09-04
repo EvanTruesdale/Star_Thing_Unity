@@ -84,17 +84,23 @@ namespace Assets.Scripts
             menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * -distance;
             GameObject Menu2 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(-PlayerTransform.Find("Main Camera").forward));
 
-            //Info Menu
-            //menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
-            //GameObject LoadMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
 
             //Set Menus as children of MenuManager to keep them together and easy to move
             Menu1.transform.SetParent(GameObject.Find("MenuManager").transform);
             Menu2.transform.SetParent(GameObject.Find("MenuManager").transform);
-            //LoadMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
 
             Menu1.GetComponentInChildren<Dropdown>().itemText.text = centralBody;
             Menu2.GetComponentInChildren<Dropdown>().itemText.text = centralBody;
+
+            if(centralBody != "default"){
+                //Info Menu
+                menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
+                GameObject LoadMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
+                LoadMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
+                LoadMenu.transform.Rotate(new Vector3(20f, 0, 0));
+                LoadMenu.transform.position += new Vector3(0, -6.5f, 0);
+                SetInfoText(centralBody);
+            }
 
             //Set Slider values
             GameObject[] SpeedSliders = GameObject.FindGameObjectsWithTag("SpeedSlider");
@@ -149,7 +155,30 @@ namespace Assets.Scripts
 
         public void SetInfoText(string bodyName)
         {
+            string text = string.Format("Mass: {0} kilograms\nRadius: {1} kilometers\nAphelion: {2} kilometers\nPerhelion: {3} kilometers\nRotation Period: {4} days\nOrbital Inclination: {5} degrees\nOrbital Obliquity: {6} degrees",
+                                        BodyInitialzation.GetScaledMass(bodyName) * PhysicsCalculation.massScalar,
+                                        BodyInitialzation.GetScaledRadius(bodyName) * PhysicsCalculation.radiusScalar,
+                                        BodyInitialzation.GetScaledDistance(bodyName) * (1 + BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar,
+                                        BodyInitialzation.GetScaledDistance(bodyName) * (1 - BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar,
+                                        BodyInitialzation.GetRotationPeriod(bodyName),
+                                        BodyInitialzation.GetOrbitalInclination(bodyName),
+                                        BodyInitialzation.GetOrbitObliquity(bodyName)
+                                       );
 
+            GameObject InfoMenu = GameObject.FindWithTag("InfoMenu");
+            Text[] TextObjects = InfoMenu.GetComponentsInChildren<Text>();
+
+            foreach (Text TextObject in TextObjects)
+            {
+                if (TextObject.name == "Body Text")
+                {
+                    TextObject.text = bodyName;
+                }
+                else if (TextObject.name == "Description Text")
+                {
+                    TextObject.text = text;
+                }
+            }
         }
     }
 }

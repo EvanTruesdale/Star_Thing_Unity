@@ -89,9 +89,9 @@ namespace Assets.Scripts
 
             //Read constants from Physics Script
             Constants = gameObject.GetComponent<PhysicsCalculation>();
-            velocityScalar = Constants.velocityScalar;
-            distanceScalar = Constants.distanceScalar;
-            massScalar = Constants.massScalar;
+            velocityScalar = PhysicsCalculation.velocityScalar;
+            distanceScalar = PhysicsCalculation.distanceScalar;
+            massScalar = PhysicsCalculation.massScalar;
 
             //Create objects with given values
             for (int i = 0; i < names.Count; i++)
@@ -117,7 +117,7 @@ namespace Assets.Scripts
                 holderObject.GetComponent<Rigidbody>().mass = scaledMasses[i];
                 //Set velocity, calculated specifically for APHELION by program
                 float velocityAdjustment = (2 / ((scaledDistances[i] * distanceScalar) * (1 + orbitalEccentricities[i]))) - 1 / (scaledDistances[i] * distanceScalar);
-                holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sqrt(Constants.G * Sun.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
+                holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sqrt(PhysicsCalculation.G * Sun.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
                                                                           0, 0);
 
                 //Set scale

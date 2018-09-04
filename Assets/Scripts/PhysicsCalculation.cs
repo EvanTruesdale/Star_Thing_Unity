@@ -10,11 +10,11 @@ namespace Assets.Scripts
         //This is the Main collection of Bodies
         static List<GameObject> Bodies = new List<GameObject>();
         //Constants
-        public float G;
-        public float distanceScalar;
-        public float massScalar;
-        public float velocityScalar;
-        public float radiusScalar;
+        public static float G = 6.67e-11f;
+        public static float distanceScalar = 1e6f;
+        public static float massScalar = 1e24f;
+        public static float velocityScalar = 1e6f;
+        public static float radiusScalar = 1e6f;
 
         private void Start()
         {
