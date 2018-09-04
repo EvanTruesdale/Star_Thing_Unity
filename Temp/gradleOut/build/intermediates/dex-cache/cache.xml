@@ -3,12 +3,39 @@
 
     <item
         is-multidex="false"
-        jar="/Users/evantruesdale/.android/build-cache/b9812f85ff3b8fefda60e0e0c6833f709351b5f8/output/jars/classes.jar"
+        jar="/Users/evantruesdale/.android/build-cache/e298c3f7ceca8dd4955a38342863acaed01dd33e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.0"
+        sha1="89a665d716c3d6b2922d194ecd5aec7ae45beb3f">
+        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_666a2e7ab0867be8a354c5b3215cc94796ccebf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/evantruesdale/.android/build-cache/22e34d96bd8271aa3396d118ca1ce6a07a3a7bb6/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.0"
         sha1="9dbb83f0fca00962e516ec6a098b69c7a07d0bf8">
-        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_0f688bbb380261752c41c0818056333ccb8422c9.jar" />
+        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_8d471cafff34429b7b5f43a07872279c6a3a634f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/evantruesdale/.android/build-cache/ef79a2de13ef1b04e45017a584fafb5d34d0077c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.0"
+        sha1="0e73b79f6ee536f7b2d00367f0a55dce11a3a61d">
+        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_1b7cc39bf0b8a9ce61091465c217f2ba3a71c52b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/evantruesdale/.android/build-cache/e96e60c819dfc19e40a15ba23e080bf35d875d9b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.0"
+        sha1="1bdf1c662489164112ea64181ba0df59970899af">
+        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_26ec158d813e971a063f8e9b8f6c6a08855da84a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,39 +48,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/evantruesdale/.android/build-cache/394188b0d325ec283bde5445c1e5905d54093cd3/output/jars/classes.jar"
+        jar="/Users/evantruesdale/.android/build-cache/d39fdc1c00f8014800f02e2b1762baa27615f2fb/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.0"
         sha1="36e70259b99d30e8bd89f2246a70d44a53cb309f">
-        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_f767f950ad1eefb8814d36a2169af0450bb63490.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/evantruesdale/.android/build-cache/bf247da536011ad2ae1fa7d82c7c6f96869ebdc5/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.0"
-        sha1="0e73b79f6ee536f7b2d00367f0a55dce11a3a61d">
-        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_c584c4c93dcd945194d1cb5a660e3abfb9eaec01.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/evantruesdale/.android/build-cache/d9324aaf7959fc824da6cc6c927d44847ad618c0/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.0"
-        sha1="1bdf1c662489164112ea64181ba0df59970899af">
-        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_720731a8968984895c4f8ce17dcaf2abfab0936f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/evantruesdale/.android/build-cache/0e16306979a60718d1b81a726eaad018ef83f826/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.0"
-        sha1="89a665d716c3d6b2922d194ecd5aec7ae45beb3f">
-        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_7af9a20756c39fc2f1bc6191631fb5fcf2958167.jar" />
+        <dex dex="/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_923bb9a1c207e2733d9b8e86fe944b783dbc5fbe.jar" />
     </item>
     <item
         is-multidex="false"

@@ -139,7 +139,8 @@ namespace Assets.Scripts
             foreach (GameObject Body in Bodies)
             {
                 float radius = BodyInitialzation.GetScaledRadius(Body.name);
-                Body.GetComponent<Transform>().localScale = new Vector3(radius * scale, radius * scale, radius * scale);
+                float bodyScale = MenuActions.Map(scale, 1, 10, radius, 1);
+                Body.GetComponent<Transform>().localScale = new Vector3(bodyScale, bodyScale, bodyScale);
             }
         }
 

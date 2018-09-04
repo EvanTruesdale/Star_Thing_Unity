@@ -129,7 +129,7 @@ e3a3385227abfaf755b96cd01df48a78 Assembly-CSharp.dll:Assets.Scripts.BodyInitialz
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Scripts.MenuController
 82c4df0703ee0c74fec7eda7f1754686 Assembly-CSharp.dll:.GvrAudioListener
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrPointerManager
-876340d3d56dfa6f782ee96436372ba2 Assembly-CSharp.dll:Assets.Scripts.PhysicsCalculation
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Assets.Scripts.PhysicsCalculation
 ec7197ab43ffb42a7321b609332a9861 Assembly-CSharp.dll:.GvrTrackedController
 31e91faba2267dbf8c0fe528bca54ff7 Assembly-CSharp.dll:.GvrLaserPointer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TrailActions
@@ -185,3 +185,4 @@ a8b185f93b85036e13e3f553c802615a Assembly-CSharp.dll:.GvrTooltip
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Gvr.Internal.EmulatorClientSocket
 7d05c1a36ca8db05546065b852216990 Assembly-CSharp.dll:.GvrControllerInput
 b2945430dfd6bbdb5d77043b47bf85e7 Assembly-CSharp.dll:.GvrControllerReticleVisual
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ReticleController
