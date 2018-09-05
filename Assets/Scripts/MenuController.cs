@@ -14,7 +14,7 @@ namespace Assets.Scripts
         static GameObject MainMeunPrefab;
         static GameObject InfoMeunPrefab;
 
-        static string centralBody = "default";
+        static string centralBody = "Sun";
         string infoText = "";
         static bool isMenuOpen;
         static float distance = 15;
@@ -41,16 +41,20 @@ namespace Assets.Scripts
                 OpenMainMenu();
             }
 
-            if (centralBody == "default")
-            {
 
+            Vector3 playerPosition = new Vector3();
+            if (centralBody == "Sun")
+            {
+                //Move Camera to new Position in front of Central Body
+                playerPosition = new Vector3(-40, 15, 0);
+
+                PlayerTransform.position = playerPosition;
+
+                GameObject.Find("MenuManager").GetComponent<Transform>().position = playerPosition;
             }
             else
             {
-
-                //Move Camera to new Position in front of Central Body
-
-                Vector3 playerPosition = new Vector3();
+                //Move Camera to Default Position
                 playerPosition = GameObject.Find(centralBody).GetComponent<Transform>().position;
                 playerPosition -= new Vector3(1, 0, 0);
 
@@ -70,10 +74,24 @@ namespace Assets.Scripts
 
             //Get Dropdown Data (Bodies)
             MainMeunPrefab.GetComponentInChildren<Dropdown>().ClearOptions();
+
+            //Add selected Body first
+            foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
+            {
+                if (Body.name == centralBody)
+                {
+                    Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
+                    MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                }
+            }
+            //Add rest of Bodies
             foreach (GameObject Body in PhysicsCalculation.GetBodies())
             {
-                Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
-                MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                if(Body.name != centralBody)
+                {
+                    Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
+                    MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                }
             }
 
             //Forward Menu
@@ -92,7 +110,8 @@ namespace Assets.Scripts
             Menu1.GetComponentInChildren<Dropdown>().itemText.text = centralBody;
             Menu2.GetComponentInChildren<Dropdown>().itemText.text = centralBody;
 
-            if(centralBody != "default"){
+            if (centralBody != "Sun")
+            {
                 //Info Menu
                 menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
                 GameObject LoadMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));

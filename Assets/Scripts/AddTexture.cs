@@ -22,7 +22,7 @@ public class AddTexture : MonoBehaviour
             GameObject child = Instantiate(Resources.Load<GameObject>("Tesla_Roadster_Model"));
             child.transform.parent = gameObject.transform;
             child.transform.parent.gameObject.GetComponent<Renderer>().enabled = false;
-            child.transform.localPosition = new Vector3(0, 0, -0f);
+            child.transform.localPosition = new Vector3(0, 0, -.5f);
             child.transform.localRotation = new Quaternion();
             child.transform.localScale = new Vector3(1, 1, 1);
         }

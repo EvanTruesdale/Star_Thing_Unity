@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Sep 04 13:50:43 PDT 2018
+#Wed Sep 05 08:22:21 PDT 2018
 122.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.ClothModule.dll
 60.set=ASSET
 129.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-xxhdpi-v4/app_icon.png
@@ -193,7 +193,7 @@
 33.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/mscorlib.dll
 109.set=ASSET
 43.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
-80.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout-ldrtl-land-v17/back_button.xml
+80.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-xxxhdpi-v4/quantum_ic_settings_white_24.png
 90.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 6.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/transforms/mergeJniLibs/release/folders/2000/1f/main
 87.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.UNETModule.dll
@@ -251,7 +251,7 @@
 2.set=NATIVE_RESOURCE
 72.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.SharedInternalsModule.dll
 131.set=ANDROID_RESOURCE
-79.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-xxxhdpi-v4/quantum_ic_settings_white_24.png
+79.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout-ldrtl-land-v17/back_button.xml
 123.set=ASSET
 115.set=ASSET
 107.set=NATIVE_RESOURCE
@@ -264,7 +264,7 @@
 86.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.SpriteMaskModule.dll
 96.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 20.set=ANDROID_RESOURCE
-125.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout/ui_layer.xml
+125.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-xxxhdpi-v4/quantum_ic_close_white_24.png
 12.set=ANDROID_RESOURCE
 140.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 90.set=ASSET
@@ -287,7 +287,7 @@
 109.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 114.set=ASSET
 18.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
-146.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/app_icon.png
+146.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/quantum_ic_settings_white_24.png
 55.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.VehiclesModule.dll
 106.set=ASSET
 65.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
@@ -329,7 +329,7 @@ count=148
 85.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/sharedassets0.assets.split1
 95.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 10.set=ASSET
-124.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-xxxhdpi-v4/quantum_ic_close_white_24.png
+124.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout/ui_layer.xml
 80.set=ANDROID_RESOURCE
 72.set=ASSET
 146.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
@@ -353,7 +353,7 @@ count=148
 145.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/transition.png
 54.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.UmbraModule.dll
 64.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
-147.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/quantum_ic_settings_white_24.png
+147.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/app_icon.png
 115.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 14.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-xhdpi-v4/quantum_ic_settings_white_24.png
 24.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
