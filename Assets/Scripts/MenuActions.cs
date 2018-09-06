@@ -78,4 +78,17 @@ public class MenuActions : MonoBehaviour
         GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
         CloseMainMenu();
     }
+
+    public void ToggleTrails(){
+        foreach (GameObject Body in PhysicsCalculation.GetBodies())
+        {
+            if(Body.name != MenuController.GetCentralBody()){
+                Body.GetComponentInChildren<TrailRenderer>().enabled = GetComponent<Toggle>().isOn;
+            }
+            else
+            {
+                Body.GetComponentInChildren<TrailRenderer>().enabled = false;
+            }
+        }
+    }
 }

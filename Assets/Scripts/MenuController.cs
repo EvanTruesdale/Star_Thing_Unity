@@ -173,16 +173,21 @@ namespace Assets.Scripts
             centralBody = input;
         }
 
+        public static string GetCentralBody()
+        {
+            return centralBody;
+        }
+
         public void SetInfoText(string bodyName)
         {
             string text = string.Format("Mass: {0} kilograms\nRadius: {1} kilometers\nAphelion: {2} kilometers\nPerhelion: {3} kilometers\nRotation Period: {4} days\nOrbital Inclination: {5} degrees\nOrbital Obliquity: {6} degrees",
-                                        BodyInitialzation.GetScaledMass(bodyName) * PhysicsCalculation.massScalar,
-                                        BodyInitialzation.GetScaledRadius(bodyName) * PhysicsCalculation.radiusScalar,
-                                        BodyInitialzation.GetScaledDistance(bodyName) * (1 + BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar,
-                                        BodyInitialzation.GetScaledDistance(bodyName) * (1 - BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar,
-                                        BodyInitialzation.GetRotationPeriod(bodyName),
-                                        BodyInitialzation.GetOrbitalInclination(bodyName),
-                                        BodyInitialzation.GetOrbitObliquity(bodyName)
+                                        Mathf.Round(BodyInitialzation.GetScaledMass(bodyName) * PhysicsCalculation.massScalar * 100) / 100,
+                                        Mathf.Round(BodyInitialzation.GetScaledRadius(bodyName) * PhysicsCalculation.radiusScalar * 100) / 100,
+                                        Mathf.Round(BodyInitialzation.GetScaledDistance(bodyName) * (1 + BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar * 100) / 100,
+                                        Mathf.Round(BodyInitialzation.GetScaledDistance(bodyName) * (1 - BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar * 100) / 100,
+                                        Mathf.Round(BodyInitialzation.GetRotationPeriod(bodyName) * 100) / 100,
+                                        Mathf.Round(BodyInitialzation.GetOrbitalInclination(bodyName) * 100) / 100,
+                                        Mathf.Round(BodyInitialzation.GetOrbitObliquity(bodyName) * 100) / 100
                                        );
 
             GameObject InfoMenu = GameObject.FindWithTag("InfoMenu");

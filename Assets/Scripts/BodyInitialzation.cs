@@ -24,6 +24,7 @@ namespace Assets.Scripts
         static List<float> orbitalEccentricities = new List<float>();
         static List<float> orbitObliquities = new List<float>();
         static List<float> scaledRadii = new List<float>();
+        static List<string> centralBodies = new List<string>();
 
         //Access methods for TXT file data
         public static float GetScaledMass(string name)
@@ -74,9 +75,17 @@ namespace Assets.Scripts
             return scaledRadii[index];
         }
 
+        public static string GetCentralBody(string name)
+        {
+            int index = names.IndexOf(name);
+            return centralBodies[index];
+        }
+
         float velocityScalar;
         float distanceScalar;
         float massScalar;
+
+        int frame = 0;
 
         void Start()
         {
@@ -96,40 +105,71 @@ namespace Assets.Scripts
             //Create objects with given values
             for (int i = 0; i < names.Count; i++)
             {
-                //Create object, with Position
-
-
-                //START OBJECTS AT APHELION
-                //START OBJECTS AT APHELION
-                //START OBJECTS AT APHELION
-
-
-                GameObject holderObject = Instantiate(BodyPrefab,
-                                                  new Vector3(0,
-                                                              scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * orbitalInclinations[i]),
-                                                              scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * orbitalInclinations[i])),
-                                                  new Quaternion());
-                //Set rotation
-                holderObject.transform.Rotate(new Vector3(1, 0, 0), orbitObliquities[i]);
-                //Set mass,
-                //scaled b/c Rigidbody can't handle the size, 
-                //masses are scaled up for calculation then force is scaled back down
-                holderObject.GetComponent<Rigidbody>().mass = scaledMasses[i];
-                //Set velocity, calculated specifically for APHELION by program
-                float velocityAdjustment = (2 / ((scaledDistances[i] * distanceScalar) * (1 + orbitalEccentricities[i]))) - 1 / (scaledDistances[i] * distanceScalar);
-                holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sqrt(PhysicsCalculation.G * Sun.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
-                                                                          0, 0);
-
-                //Set scale
-                holderObject.transform.localScale = new Vector3(scaledRadii[i], scaledRadii[i], scaledRadii[i]);
-
-                //Set name
-                holderObject.name = names[i];
-
-                //Add body to PhysicsCalculation Bodies list
-                Constants.AddBody(holderObject);
+                //If the central body is the Sun, load them first, because these will be central bodies for the moons
+                if(centralBodies[i] == "Sun"){
+                    LoadBody(i, "Sun");
+                }
             }
 
+            frame = 1;
+        }
+
+        void Update()
+        {
+            if(frame == 1){
+                frame = 2;
+                for (int i = 0; i < names.Count; i++)
+                {
+                    //Load secondary bodies now
+                    if(centralBodies[i] != "Sun"){
+                        LoadBody(i, centralBodies[i]);
+                    }
+                }
+
+            }
+        }
+
+        void LoadBody(int i, string center){
+            //Create object, with Position
+
+            //START OBJECTS AT APHELION
+            //START OBJECTS AT APHELION
+            //START OBJECTS AT APHELION
+
+            GameObject CenterBody = GameObject.Find(center);
+
+
+            GameObject holderObject = Instantiate(BodyPrefab,
+                                                          new Vector3(0,
+                                                                  scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * orbitalInclinations[i]),
+                                                                  scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * orbitalInclinations[i])),
+                                                          new Quaternion());
+
+            //Set rotation
+            holderObject.transform.Rotate(new Vector3(1, 0, 0), orbitObliquities[i]);
+
+            //Set mass,
+            //scaled b/c Rigidbody can't handle the size, 
+            //masses are scaled up for calculation then force is scaled back down
+            holderObject.GetComponent<Rigidbody>().mass = scaledMasses[i];
+
+            //Set velocity, calculated specifically for APHELION by program
+            float velocityAdjustment = (2 / ((scaledDistances[i] * distanceScalar) * (1 + orbitalEccentricities[i]))) - 1 / (scaledDistances[i] * distanceScalar);
+            holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
+                                                                                  0, 0);
+            holderObject.GetComponent<Rigidbody>().velocity += CenterBody.GetComponent<Rigidbody>().velocity;
+
+            //Set scale
+            holderObject.transform.localScale = new Vector3(scaledRadii[i], scaledRadii[i], scaledRadii[i]);
+
+            //Set name
+            holderObject.name = names[i];
+
+            //Add body to PhysicsCalculation Bodies list
+            Constants.AddBody(holderObject);
+
+            //Move Body to orbit it's center
+            holderObject.transform.position += CenterBody.GetComponent<Transform>().position;
         }
 
         void ReadCSV()
@@ -150,7 +190,7 @@ namespace Assets.Scripts
 
                 //Add values to respective lists for body initialization
                 //NAME, MASS, RADIUS, ROTATION PERIOD, SEMI-MAJOR AXIS, ORBITAL INCLINATION, ORBITAL ECCENTRICITY, OBLIQUITY
-                names.Add(values[0]);
+                names.Add(values[0].Trim());
                 scaledMasses.Add(float.Parse(values[1]));
                 scaledRadii.Add(float.Parse(values[2]));
                 rotationPeriods.Add(float.Parse(values[3]));
@@ -158,7 +198,8 @@ namespace Assets.Scripts
                 orbitalInclinations.Add(float.Parse(values[5]));
                 orbitalEccentricities.Add(float.Parse(values[6]));
                 orbitObliquities.Add(float.Parse(values[7]));
-
+                centralBodies.Add(values[8].Trim());
+                             
             }
         }
 
