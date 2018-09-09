@@ -180,7 +180,7 @@ namespace Assets.Scripts
 
         public void SetInfoText(string bodyName)
         {
-            string text = string.Format("Mass: {0} kilograms\nRadius: {1} kilometers\nAphelion: {2} kilometers\nPerhelion: {3} kilometers\nRotation Period: {4} days\nOrbital Inclination: {5} degrees\nOrbital Obliquity: {6} degrees",
+            string text = string.Format("Mass: {0} kg\nRadius: {1} km\nAphelion: {2} km\nPerhelion: {3} km\nRotation Period: {4} days\nOrbital Inclination: {5} degrees\nOrbital Obliquity: {6} degrees",
                                         Mathf.Round(BodyInitialzation.GetScaledMass(bodyName) * PhysicsCalculation.massScalar * 100) / 100,
                                         Mathf.Round(BodyInitialzation.GetScaledRadius(bodyName) * PhysicsCalculation.radiusScalar * 100) / 100,
                                         Mathf.Round(BodyInitialzation.GetScaledDistance(bodyName) * (1 + BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar * 100) / 100,
