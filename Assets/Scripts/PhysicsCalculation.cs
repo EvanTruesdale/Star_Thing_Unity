@@ -14,7 +14,7 @@ namespace Assets.Scripts
         public static float distanceScalar = 1e10f;
         public static float massScalar = 1e24f;
         public static float velocityScalar = 1e5f;
-        public static float radiusScalar = 1e6f;
+        public static float radiusScalar = 1e10f;
 
         private void Start()
         {
