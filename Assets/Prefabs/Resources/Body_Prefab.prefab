@@ -186,6 +186,24 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.79587483
+        value: 0.69701445
+        inSlope: -0.73333794
+        outSlope: -0.73333794
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14690775
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -6.4158754
+        outSlope: -6.4158754
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.27361175
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -277,7 +295,7 @@ SphereCollider:
   m_GameObject: {fileID: 1594625800977172}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
