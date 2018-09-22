@@ -10,8 +10,9 @@ int drawable quantum_ic_close_white_24 0x7f020003
 int drawable quantum_ic_settings_white_24 0x7f020004
 int drawable rippleable 0x7f020005
 int drawable transition 0x7f020006
-int drawable vr_icon_back 0x7f020007
-int drawable vr_icon_front 0x7f020008
+int drawable unity_static_splash 0x7f020007
+int drawable vr_icon_back 0x7f020008
+int drawable vr_icon_front 0x7f020009
 int id back_button 0x7f080001
 int id divider 0x7f080007
 int id transition_bottom_frame 0x7f080005

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Sep 22 14:12:52 PDT 2018
+#Sat Sep 22 14:29:14 PDT 2018
 122.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.DirectorModule.dll
 60.set=ASSET
 129.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/transforms/mergeJniLibs/release/folders/2000/1f/main/lib/x86/libunity.so
@@ -66,7 +66,7 @@
 99.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
 121.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/boot.config
 50.set=ASSET
-128.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout/ui_layer.xml
+128.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-ldpi-v4/app_icon.png
 42.set=ANDROID_RESOURCE
 143.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 52.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
@@ -149,6 +149,7 @@
 90.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.UnityAnalyticsModule.dll
 6.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/transforms/mergeJniLibs/release/folders/2000/1f/main/lib/armeabi-v7a/libmain.so
 97.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll
+150.set=ANDROID_RESOURCE
 104.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/transforms/mergeJniLibs/release/folders/2000/1f/main
 142.set=ASSET
 141.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/ca71259be6348485abbe393157796cb8
@@ -169,6 +170,7 @@
 23.set=ASSET
 103.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.UnityConnectModule.dll
 15.set=ANDROID_RESOURCE
+150.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/app_icon.png
 93.set=ANDROID_RESOURCE
 19.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.BaselibModule.dll
 85.set=ASSET
@@ -199,7 +201,7 @@
 87.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/sharedassets0.assets.split1
 97.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 30.set=ASSET
-126.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-ldpi-v4/app_icon.png
+126.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout/ui_layer.xml
 22.set=ASSET
 141.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 50.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
@@ -220,6 +222,7 @@
 3.set=ANDROID_RESOURCE
 140.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.TerrainPhysicsModule.dll
 132.set=ASSET
+150.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
 124.set=ASSET
 19.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 56.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.VehiclesModule.dll
@@ -227,7 +230,7 @@
 66.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
 108.set=ASSET
 110.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/transforms/mergeJniLibs/release/folders/2000/1f/main
-149.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/app_icon.png
+149.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/quantum_ic_settings_white_24.png
 117.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 16.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.AIModule.dll
 26.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_
@@ -293,8 +296,8 @@
 55.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release/bin/Data/Managed/UnityEngine.UmbraModule.dll
 106.set=ANDROID_RESOURCE
 65.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
-count=150
-148.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable-mdpi-v4/quantum_ic_settings_white_24.png
+count=151
+148.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/drawable/unity_static_splash.png
 116.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release
 15.file=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/resources-release.ap_/res/layout-land/settings_button.xml
 25.base=/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/assets/release

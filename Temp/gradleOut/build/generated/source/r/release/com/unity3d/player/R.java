@@ -27,8 +27,9 @@ public final class R {
         public static final int quantum_ic_settings_white_24=0x7f020004;
         public static final int rippleable=0x7f020005;
         public static final int transition=0x7f020006;
-        public static final int vr_icon_back=0x7f020007;
-        public static final int vr_icon_front=0x7f020008;
+        public static final int unity_static_splash=0x7f020007;
+        public static final int vr_icon_back=0x7f020008;
+        public static final int vr_icon_front=0x7f020009;
     }
     public static final class id {
         public static final int back_button=0x7f080001;
