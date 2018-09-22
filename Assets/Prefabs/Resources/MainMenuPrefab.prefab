@@ -1021,11 +1021,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Earth
-      m_Image: {fileID: 0}
     - m_Text: Mercury
       m_Image: {fileID: 0}
+    - m_Text: Sun
+      m_Image: {fileID: 0}
     - m_Text: Venus
+      m_Image: {fileID: 0}
+    - m_Text: Earth
       m_Image: {fileID: 0}
     - m_Text: Mars
       m_Image: {fileID: 0}
@@ -1562,7 +1564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 2
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1631,7 +1633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Earth
+  m_Text: 
 --- !u!114 &114724029298832684
 MonoBehaviour:
   m_ObjectHideFlags: 1
