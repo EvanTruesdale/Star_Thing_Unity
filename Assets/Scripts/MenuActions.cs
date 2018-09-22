@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts;
@@ -75,7 +76,38 @@ public class MenuActions : MonoBehaviour
         string text = GetComponent<Dropdown>().options[GetComponent<Dropdown>().value].text;
         MenuController.SetCentralBody(text);
 
-        GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
+        //Turn off Parent Trail
+        try
+        {
+            GameObject Parent = GameObject.Find(BodyInitialzation.GetCentralBody(text));
+            if(Parent.GetComponentInChildren<TrailRenderer>() != null)
+            {
+                Parent.GetComponentInChildren<TrailRenderer>().enabled = false;
+            }
+        }
+        catch(ArgumentOutOfRangeException e)
+        {
+            
+        }
+
+        if(text != "Sun"){
+            //Turn off Children Trails
+            foreach(GameObject Body in PhysicsCalculation.GetBodies())
+            {
+                if(text == BodyInitialzation.GetCentralBody(Body.name))
+                {
+                    Body.GetComponentInChildren<TrailRenderer>().enabled = false;
+                }
+            }
+        }
+
+        //Turn off Trail
+        if(GameObject.Find(text).GetComponentInChildren<TrailRenderer>() != null)
+        {
+            GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
+        }
+
+
         CloseMainMenu();
     }
 

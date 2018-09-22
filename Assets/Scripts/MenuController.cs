@@ -85,7 +85,7 @@ namespace Assets.Scripts
                 }
             }
             //Add rest of Bodies
-            foreach (GameObject Body in PhysicsCalculation.GetBodies())
+            foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
             {
                 if(Body.name != centralBody)
                 {
