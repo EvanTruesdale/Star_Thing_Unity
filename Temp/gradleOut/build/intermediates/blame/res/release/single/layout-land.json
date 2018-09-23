@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/merged/release/layout-land/settings_button.xml",
+        "source": "/Users/evantruesdale/.android/build-cache/aba7dbccc66a5d78d0aaff5a8b50841821a6e1b5/output/res/layout-land/settings_button.xml"
+    },
+    {
+        "merged": "/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/merged/release/layout-land/ui_layer_with_portrait_support.xml",
+        "source": "/Users/evantruesdale/.android/build-cache/aba7dbccc66a5d78d0aaff5a8b50841821a6e1b5/output/res/layout-land/ui_layer_with_portrait_support.xml"
+    },
+    {
+        "merged": "/Users/evantruesdale/Documents/Unity Projects/Star_Thing_Unity/Temp/gradleOut/build/intermediates/res/merged/release/layout-land/back_button.xml",
+        "source": "/Users/evantruesdale/.android/build-cache/aba7dbccc66a5d78d0aaff5a8b50841821a6e1b5/output/res/layout-land/back_button.xml"
+    }
+]
