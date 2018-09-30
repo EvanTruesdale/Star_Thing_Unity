@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: FPS Nerd Squad
+  companyName: DICE Club Nerd Squad
   productName: Star Thing
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 70faaf85c79224db1b65c058dfa5f415, type: 3}
+  - logo: {fileID: 21300000, guid: 32e3db9942e7a40128afd62484fae3cf, type: 3}
     duration: 4
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 832723fa1bb7d40bda2577b6faa44d79,
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: a6cf5484f1e8d4ccba8be758a9e4b169,
     type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -153,7 +153,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.FPSNerdSquad.Star_Thing_Unity
+    Android: com.DICEClubNerdSquad.Star_Thing_Unity
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
@@ -242,7 +242,7 @@ PlayerSettings:
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 2800000, guid: 832723fa1bb7d40bda2577b6faa44d79, type: 3}
+  androidSplashScreen: {fileID: 2800000, guid: a6cf5484f1e8d4ccba8be758a9e4b169, type: 3}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidTVCompatibility: 1

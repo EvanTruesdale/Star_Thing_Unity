@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -66,7 +67,14 @@ namespace Assets.Scripts
         public static float GetOrbitObliquity(string name)
         {
             int index = names.IndexOf(name);
-            return orbitObliquities[index];
+            try
+            {
+                return orbitObliquities[index];
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                return 0;
+            }
         }
 
         public static float GetScaledRadius(string name)
@@ -141,8 +149,8 @@ namespace Assets.Scripts
 
             GameObject holderObject = Instantiate(BodyPrefab,
                                                           new Vector3(0,
-                                                                  scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * orbitalInclinations[i]),
-                                                                  scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * orbitalInclinations[i])),
+                                                                      scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center))),
+                                                                      scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center)))),
                                                           new Quaternion());
 
             //Set rotation
@@ -174,7 +182,7 @@ namespace Assets.Scripts
 
         void ReadCSV()
         {
-            //Data from Planetary Fact Sheet https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+            //Data from Planetary Fact Sheet https://nssdc.gsfc.nasa.gov/planetary/planetfact.html
             //Tesla Data from HORIZONS Web Interface https://ssd.jpl.nasa.gov/horizons.cgi#results
 
             //Load text file
@@ -189,7 +197,9 @@ namespace Assets.Scripts
                 string[] values = line.Split(',');
 
                 //Add values to respective lists for body initialization
-                //NAME, MASS, RADIUS, ROTATION PERIOD, SEMI-MAJOR AXIS, ORBITAL INCLINATION, ORBITAL ECCENTRICITY, OBLIQUITY
+
+                //NAME, MASS,    RADIUS, ROTATION PERIOD, SEMI-MAJOR AXIS, ORBITAL INCLINATION, ORBITAL ECCENTRICITY, OBLIQUITY, CENTRAL BODY
+                //      10^24kg  10^8m   1hours           10^8m            1degrees             (dimensionless)       1degrees
                 names.Add(values[0].Trim());
                 scaledMasses.Add(float.Parse(values[1]));
                 scaledRadii.Add(float.Parse(values[2]));

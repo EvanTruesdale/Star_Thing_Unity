@@ -35,7 +35,7 @@ android {
 	defaultConfig {
 		minSdkVersion	19
 		targetSdkVersion 28
-		applicationId 'com.FPSNerdSquad.Star_Thing_Unity'
+		applicationId 'com.DICEClubNerdSquad.Star_Thing_Unity'
 		ndk {
 			abiFilters 'armeabi-v7a', 'x86'
 		}

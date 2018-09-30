@@ -26,5 +26,10 @@ public class AddTexture : MonoBehaviour
             child.transform.localRotation = new Quaternion();
             child.transform.localScale = new Vector3(1, 1, 1);
         }
+        if(gameObject.name == "Pallas" || gameObject.name == "Juno" || gameObject.name == "Vesta" || gameObject.name == "Halley's Comet")
+        {
+            texturePath = "Generic_Comet_Texture";
+            GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture)Resources.Load(texturePath));
+        }
     }
 }

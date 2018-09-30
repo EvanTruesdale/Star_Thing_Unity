@@ -41,27 +41,22 @@ namespace Assets.Scripts
                 OpenMainMenu();
             }
 
-
-            Vector3 playerPosition = new Vector3();
-            if (centralBody == "Sun")
+            //Move Bodies to put central body at origin
+            foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
             {
-                //Move Camera to new Position in front of Central Body
-                playerPosition = new Vector3(-40, 15, 0);
-
-                PlayerTransform.position = playerPosition;
-
-                GameObject.Find("MenuManager").GetComponent<Transform>().position = playerPosition;
+                if(Body.name != centralBody)
+                {
+                    Body.GetComponent<Transform>().position -= GameObject.Find(centralBody).GetComponent<Transform>().position;
+                }
             }
-            else
+            GameObject.Find(centralBody).GetComponent<Transform>().position = new Vector3(0, 0, 0);
+
+            foreach (GameObject Body in PhysicsCalculation.GetBodies())
             {
-                //Move Camera to Default Position
-                playerPosition = GameObject.Find(centralBody).GetComponent<Transform>().position;
-                playerPosition -= new Vector3(1, 0, 0);
-
-                PlayerTransform.position = playerPosition;
-
-                GameObject.Find("MenuManager").GetComponent<Transform>().position = playerPosition;
+                Body.GetComponentInChildren<TrailRenderer>().Clear();
             }
+
+            GameObject.Find("MenuManager").GetComponent<Transform>().position = PlayerTransform.position;
         }
 
         public void OpenMainMenu()
@@ -114,10 +109,10 @@ namespace Assets.Scripts
             {
                 //Info Menu
                 menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
-                GameObject LoadMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
-                LoadMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
-                LoadMenu.transform.Rotate(new Vector3(20f, 0, 0));
-                LoadMenu.transform.position += new Vector3(0, -6.5f, 0);
+                GameObject InfoMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
+                InfoMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
+                InfoMenu.transform.Rotate(new Vector3(20f, 0, 0));
+                InfoMenu.transform.position = menuPosition + new Vector3(0, -6.5f, 0);
                 SetInfoText(centralBody);
             }
 
@@ -158,7 +153,7 @@ namespace Assets.Scripts
             foreach (GameObject Body in Bodies)
             {
                 float radius = BodyInitialzation.GetScaledRadius(Body.name);
-                float bodyScale = MenuActions.Map(scale, 1, 10, radius, .1f);
+                float bodyScale = MenuActions.Map(scale, 1, 10, radius, 1f);
                 Body.GetComponent<Transform>().localScale = new Vector3(bodyScale, bodyScale, bodyScale);
             }
         }
@@ -171,6 +166,24 @@ namespace Assets.Scripts
         public static void SetCentralBody(string input)
         {
             centralBody = input;
+
+            if (centralBody == "Sun")
+            {
+                PlayerTransform.position = new Vector3(-40, 15, 0);
+            }
+            else
+            {
+                PlayerTransform.position = new Vector3(-5, 0 ,0);
+            }
+
+            foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
+            {
+                if(Body.name != centralBody)
+                {
+                    Body.GetComponent<Transform>().position -= GameObject.Find(centralBody).GetComponent<Transform>().position;
+                }
+            }
+            GameObject.Find(centralBody).GetComponent<Transform>().position = new Vector3(0, 0, 0);
         }
 
         public static string GetCentralBody()

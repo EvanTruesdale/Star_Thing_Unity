@@ -11,9 +11,9 @@ namespace Assets.Scripts
         static List<GameObject> Bodies = new List<GameObject>();
         //Constants
         public static float G = 6.67e-11f;
-        public static float distanceScalar = 1e10f;
+        public static float distanceScalar = 1e8f; //acually 11
         public static float massScalar = 1e24f;
-        public static float velocityScalar = 1e5f;
+        public static float velocityScalar = Mathf.Sqrt(distanceScalar);
         public static float radiusScalar = 1e10f;
 
         private void Start()

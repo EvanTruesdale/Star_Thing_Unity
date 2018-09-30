@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.FPSNerdSquad.Star_Thing_Unity"
+    package="com.DICEClubNerdSquad.Star_Thing_Unity"
     android:installLocation="preferExternal"
     android:versionCode="1"
     android:versionName="0.1" >
@@ -64,7 +64,7 @@
             android:value="true" />
         <meta-data
             android:name="unity.build-id"
-            android:value="9ed76ffe-47e9-4c00-b29c-c5e81c6cda93" />
+            android:value="f4cc6c67-ba80-494e-91f7-1ee08d3c8811" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />
