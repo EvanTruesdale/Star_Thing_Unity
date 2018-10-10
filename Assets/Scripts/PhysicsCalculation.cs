@@ -42,12 +42,15 @@ namespace Assets.Scripts
                         //Calculate Magnitude
                         float magnitude = G * mass1 * mass2 / Mathf.Pow(difference.magnitude, 2);
 
-                        //Scale Force back down for Rigidbody
-                        difference = difference.normalized;
-                        difference *= magnitude / massScalar;
+                        if (magnitude > 1e10f)
+                        {
+                            //Scale Force back down for Rigidbody
+                            difference = difference.normalized;
+                            difference *= magnitude / massScalar;
 
-                        //Add Force to Rigidbody
-                        Body2.GetComponent<Rigidbody>().AddForce(difference);
+                            //Add Force to Rigidbody
+                            Body2.GetComponent<Rigidbody>().AddForce(difference);
+                        }
                     }
                 }
             }

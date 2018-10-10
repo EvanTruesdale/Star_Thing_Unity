@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 1240899675}
   - component: {fileID: 1240899677}
   - component: {fileID: 1240899676}
+  - component: {fileID: 1240899678}
   m_Layer: 0
   m_Name: BodyManager
   m_TagString: Untagged
@@ -584,6 +585,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyPrefab: {fileID: 1594625800977172, guid: 2dd632caf0ad84394949d9b420722dd5, type: 2}
+--- !u!114 &1240899678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1240899674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96d4a72a66874a1598544d808347ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264663252
 GameObject:
   m_ObjectHideFlags: 0
