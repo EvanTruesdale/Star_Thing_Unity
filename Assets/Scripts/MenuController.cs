@@ -91,7 +91,7 @@ namespace Assets.Scripts
                         MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
                     }
                 }
-                catch(ArgumentOutOfRangeException e)
+                catch(ArgumentOutOfRangeException)
                 {
                     
                 }
@@ -107,19 +107,21 @@ namespace Assets.Scripts
                         MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
                     }
                 }
-                catch(ArgumentOutOfRangeException e)
+                catch(ArgumentOutOfRangeException)
                 {
 
                 }
             }
 
+            Transform CameraTransform = PlayerTransform.Find("Main Camera");
+
             //Forward Menu
-            Vector3 menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
-            GameObject Menu1 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
+            Vector3 menuPosition = PlayerTransform.position + CameraTransform.forward * distance;
+            GameObject Menu1 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(CameraTransform.forward));
 
             //Backward Menu
-            menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * -distance;
-            GameObject Menu2 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(-PlayerTransform.Find("Main Camera").forward));
+            menuPosition = PlayerTransform.position + CameraTransform.forward * -distance;
+            GameObject Menu2 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(-CameraTransform.forward));
 
 
             //Set Menus as children of MenuManager to keep them together and easy to move
@@ -132,12 +134,11 @@ namespace Assets.Scripts
             if (centralBody != "Sun")
             {
                 //Info Menu
-                //menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
-                //GameObject InfoMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
-                //InfoMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
-                //InfoMenu.transform.Rotate(new Vector3(0, 30f, 0));
-                //InfoMenu.transform.position = menuPosition.normalized * 8 + Vector3.Cross(PlayerTransform.Find("Main Camera").up, PlayerTransform.Find("Main Camera").forward).normalized * 8;
-                //SetInfoText(centralBody);
+                menuPosition = PlayerTransform.position + Quaternion.AngleAxis(16, CameraTransform.right) * CameraTransform.forward * distance;
+                GameObject InfoMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, CameraTransform.right) * CameraTransform.forward * distance   ));
+                InfoMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
+
+                SetInfoText(centralBody);
             }
 
             //Set Slider values
@@ -217,14 +218,14 @@ namespace Assets.Scripts
 
         public void SetInfoText(string bodyName)
         {
-            string text = string.Format("Mass: {0} kilograms\nRadius: {1} kilometers\nAphelion: {2} kilometers\nPerhelion: {3} kilometers\nRotation Period: {4} days\nOrbital Inclination: {5} degrees\nOrbital Obliquity: {6} degrees",
-                                        Mathf.Round(BodyInitialzation.GetScaledMass(bodyName) * PhysicsCalculation.massScalar * 100) / 100,
-                                        Mathf.Round(BodyInitialzation.GetScaledRadius(bodyName) * PhysicsCalculation.radiusScalar * 100) / 100,
-                                        Mathf.Round(BodyInitialzation.GetScaledDistance(bodyName) * (1 + BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar * 100) / 100,
-                                        Mathf.Round(BodyInitialzation.GetScaledDistance(bodyName) * (1 - BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.distanceScalar * 100) / 100,
-                                        Mathf.Round(BodyInitialzation.GetRotationPeriod(bodyName) * 100) / 100,
-                                        Mathf.Round(BodyInitialzation.GetOrbitalInclination(bodyName) * 100) / 100,
-                                        Mathf.Round(BodyInitialzation.GetOrbitObliquity(bodyName) * 100) / 100
+            string text = string.Format("Mass: {0} kilograms\nRadius: {1} kilometers\nAphelion: {2} kilometers\nPerhelion: {3} kilometers\nRotation Period: {4} hours\nOrbital Inclination: {5} degrees\nOrbital Obliquity: {6} degrees",
+                                        (BodyInitialzation.GetScaledMass(bodyName) * PhysicsCalculation.trueMassScalar).ToString("e2"),
+                                        (BodyInitialzation.GetScaledRadius(bodyName) * PhysicsCalculation.trueDistanceScalar).ToString("e2"),
+                                        (BodyInitialzation.GetScaledDistance(bodyName) * (1 + BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.trueDistanceScalar).ToString("e2"),
+                                        (BodyInitialzation.GetScaledDistance(bodyName) * (1 - BodyInitialzation.GetOrbitalEccentricity(bodyName)) * PhysicsCalculation.trueDistanceScalar).ToString("e2"),
+                                        BodyInitialzation.GetRotationPeriod(bodyName).ToString("f2"),
+                                        BodyInitialzation.GetOrbitalInclination(bodyName).ToString("f1"),
+                                        BodyInitialzation.GetOrbitObliquity(bodyName).ToString("f1")
                                        );
 
             GameObject InfoMenu = GameObject.FindWithTag("InfoMenu");
@@ -234,7 +235,7 @@ namespace Assets.Scripts
             {
                 if (TextObject.name == "Body Text")
                 {
-                    TextObject.text = bodyName;
+                    TextObject.text = bodyName.ToUpper();
                 }
                 else if (TextObject.name == "Description Text")
                 {

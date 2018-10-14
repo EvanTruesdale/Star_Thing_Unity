@@ -11,10 +11,14 @@ namespace Assets.Scripts
         static List<GameObject> Bodies = new List<GameObject>();
         //Constants
         public static float G = 6.67e-11f;
-        public static float distanceScalar = 1e7f; //acually 11
+        public static float distanceScalar = 1e7f;
         public static float massScalar = 1e24f;
         public static float velocityScalar = Mathf.Sqrt(distanceScalar);
         public static float radiusScalar = 1e10f;
+
+        public static float trueDistanceScalar = 1e11f;
+        public static float trueMassScalar = 1e24f;
+        public static float trueVelocityScalar = Mathf.Sqrt(trueDistanceScalar);
 
         private void Start()
         {

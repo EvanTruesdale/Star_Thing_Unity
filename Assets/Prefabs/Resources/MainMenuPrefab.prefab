@@ -70,8 +70,7 @@ GameObject:
   - component: {fileID: 224585203455393634}
   - component: {fileID: 223179531502753506}
   - component: {fileID: 114016047414946488}
-  - component: {fileID: 114648087002827872}
-  - component: {fileID: 114944209872504494}
+  - component: {fileID: 114184240931289798}
   m_Layer: 5
   m_Name: MainMenuPrefab
   m_TagString: MainMenu
@@ -813,6 +812,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: X
+--- !u!114 &114184240931289798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099039253549440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739800cd36aba44e9b04ce977e5784bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreReversedGraphics: 1
+  blockingObjects: 2
+  blockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114190372458574096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1560,22 +1575,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114648087002827872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099039253549440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 2
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &114672681817407646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1864,18 +1863,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114944209872504494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099039253549440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a63852f94e9459a8555a0723a4d491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuActions: {fileID: 0}
 --- !u!114 &114954875795901646
 MonoBehaviour:
   m_ObjectHideFlags: 1

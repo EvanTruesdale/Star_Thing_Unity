@@ -2,15 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RendererController.cs">
     <Files>
-      <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="153" Column="176" />
-      <File FileName="Assets/Scripts/Rotation.cs" Line="21" Column="49" />
-      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="53" Column="26" />
-      <File FileName="Assets/Scripts/AddTexture.cs" Line="21" Column="10" />
-      <File FileName="Assets/Scripts/MenuController.cs" Line="50" Column="18" />
-      <File FileName="Assets/Scripts/MenuActions.cs" Line="77" Column="45" />
-      <File FileName="Assets/Scripts/TrailActions.cs" Line="10" Column="3" />
-      <File FileName="Assets/Scripts/ReticleController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RendererController.cs" Line="14" Column="28" />
+      <File FileName="Assets/Scripts/BodyInitialzation.cs" Line="24" Column="65" />
+      <File FileName="Assets/Scripts/Rotation.cs" Line="7" Column="2" />
+      <File FileName="Assets/Scripts/PhysicsCalculation.cs" Line="36" Column="50" />
+      <File FileName="Assets/Scripts/AddTexture.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/MenuController.cs" Line="22" Column="9" />
+      <File FileName="Assets/Scripts/MenuActions.cs" Line="88" Column="42" />
+      <File FileName="Assets/Scripts/TrailActions.cs" Line="9" Column="51" />
+      <File FileName="Assets/Scripts/ReticleController.cs" Line="22" Column="131" />
+      <File FileName="Assets/Scripts/RendererController.cs" Line="28" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

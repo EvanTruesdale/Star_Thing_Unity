@@ -5,13 +5,6 @@ using Assets.Scripts;
 
 public class Rotation : MonoBehaviour
 {
-    private GameObject BodyManager;
-
-    void Start()
-    {
-        //Find BodyManager
-        BodyManager = GameObject.Find("BodyManager");
-    }
 
     void FixedUpdate()
     {

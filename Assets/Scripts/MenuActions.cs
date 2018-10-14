@@ -77,24 +77,24 @@ public class MenuActions : MonoBehaviour
         MenuController.SetCentralBody(text);
 
         //Turn off Parent Trail
-        try
-        {
-            GameObject Parent = GameObject.Find(BodyInitialzation.GetCentralBody(text));
-            if(Parent.GetComponentInChildren<TrailRenderer>() != null)
-            {
-                Parent.GetComponentInChildren<TrailRenderer>().enabled = false;
-            }
-        }
-        catch(ArgumentOutOfRangeException e)
-        {
+        //try
+        //{
+        //    GameObject Parent = GameObject.Find(BodyInitialzation.GetCentralBody(text));
+        //    if(Parent.GetComponentInChildren<TrailRenderer>() != null)
+        //    {
+        //        Parent.GetComponentInChildren<TrailRenderer>().enabled = false;
+        //    }
+        //}
+        //catch(ArgumentOutOfRangeException)
+        //{
             
-        }
+        //}
 
         //Turn off Trail
-        if(GameObject.Find(text).GetComponentInChildren<TrailRenderer>() != null)
-        {
-            GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
-        }
+        //if(GameObject.Find(text).GetComponentInChildren<TrailRenderer>() != null)
+        //{
+        //    GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
+        //}
 
 
         CloseMainMenu();

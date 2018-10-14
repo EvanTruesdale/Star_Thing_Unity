@@ -9,10 +9,8 @@ namespace Assets.Scripts
 {
     public class BodyInitialzation : MonoBehaviour
     {
-
+        
         public GameObject BodyPrefab;
-        private List<GameObject> Bodies = new List<GameObject>();
-        private GameObject Sun;
         private PhysicsCalculation Constants;
 
         //Values read from the TXT file
@@ -71,7 +69,7 @@ namespace Assets.Scripts
             {
                 return orbitObliquities[index];
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException)
             {
                 return 0;
             }
@@ -97,9 +95,6 @@ namespace Assets.Scripts
 
         void Start()
         {
-
-            //Find the Sun for velocity calculations
-            Sun = GameObject.FindGameObjectWithTag("Sun");
 
             //Read data file in Assets
             ReadCSV();
