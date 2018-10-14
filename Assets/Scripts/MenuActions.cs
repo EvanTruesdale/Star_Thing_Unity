@@ -90,17 +90,6 @@ public class MenuActions : MonoBehaviour
             
         }
 
-        if(text != "Sun"){
-            //Turn off Children Trails
-            foreach(GameObject Body in PhysicsCalculation.GetBodies())
-            {
-                if(text == BodyInitialzation.GetCentralBody(Body.name))
-                {
-                    Body.GetComponentInChildren<TrailRenderer>().enabled = false;
-                }
-            }
-        }
-
         //Turn off Trail
         if(GameObject.Find(text).GetComponentInChildren<TrailRenderer>() != null)
         {

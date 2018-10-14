@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -79,13 +80,36 @@ namespace Assets.Scripts
                     MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
                 }
             }
-            //Add rest of Bodies
+            //Add Parent Body
             foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
             {
-                if(Body.name != centralBody)
+                try
                 {
-                    Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
-                    MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                    if(Body.name == BodyInitialzation.GetCentralBody(centralBody))
+                    {
+                        Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
+                        MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                    }
+                }
+                catch(ArgumentOutOfRangeException e)
+                {
+                    
+                }
+            }
+            //Add Children Bodies
+            foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
+            {
+                try
+                {
+                    if(BodyInitialzation.GetCentralBody(Body.name) == centralBody)
+                    {
+                        Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
+                        MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                    }
+                }
+                catch(ArgumentOutOfRangeException e)
+                {
+
                 }
             }
 
@@ -108,12 +132,12 @@ namespace Assets.Scripts
             if (centralBody != "Sun")
             {
                 //Info Menu
-                menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
-                GameObject InfoMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
-                InfoMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
-                InfoMenu.transform.Rotate(new Vector3(20f, 0, 0));
-                InfoMenu.transform.position = menuPosition + new Vector3(0, -6.5f, 0);
-                SetInfoText(centralBody);
+                //menuPosition = PlayerTransform.position + PlayerTransform.Find("Main Camera").forward * distance;
+                //GameObject InfoMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(PlayerTransform.Find("Main Camera").forward));
+                //InfoMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
+                //InfoMenu.transform.Rotate(new Vector3(0, 30f, 0));
+                //InfoMenu.transform.position = menuPosition.normalized * 8 + Vector3.Cross(PlayerTransform.Find("Main Camera").up, PlayerTransform.Find("Main Camera").forward).normalized * 8;
+                //SetInfoText(centralBody);
             }
 
             //Set Slider values
@@ -138,7 +162,7 @@ namespace Assets.Scripts
         public static void SetSpeed(float input)
         {
             speed = input;
-            Time.timeScale = speed;
+            Time.timeScale = .1f * speed;
         }
 
         public static float GetSpeed()
