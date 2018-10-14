@@ -197,7 +197,7 @@ namespace Assets.Scripts
             }
             else
             {
-                PlayerTransform.position = new Vector3(-5, 0 ,0);
+                PlayerTransform.position = new Vector3(-5, 2 ,0);
             }
 
             foreach (GameObject Body in PhysicsCalculation.GetBodies(true))

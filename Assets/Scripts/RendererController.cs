@@ -8,14 +8,21 @@ public class RendererController : MonoBehaviour {
 	void Update () {
         foreach(GameObject Body in PhysicsCalculation.GetBodies(true))
         {
-            Transform bodyTransform = Body.GetComponent<Transform>();
-            if(bodyTransform.localScale.x / bodyTransform.position.magnitude < 0.003f)
+            try
             {
-                Body.GetComponent<MeshRenderer>().enabled = false;
+                Transform bodyTransform = Body.GetComponent<Transform>();
+                if(bodyTransform.localScale.x / bodyTransform.position.magnitude < 0.003f)
+                {
+                    Body.GetComponent<MeshRenderer>().enabled = false;
+                }
+                else
+                {
+                    Body.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
-            else
+            catch(MissingComponentException)
             {
-                Body.GetComponent<MeshRenderer>().enabled = true;
+                
             }
         }
 	}

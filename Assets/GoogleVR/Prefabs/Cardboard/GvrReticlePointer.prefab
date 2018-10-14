@@ -92,5 +92,5 @@ MonoBehaviour:
   drawDebugRays: 0
   maxReticleDistance: 40
   reticleSegments: 20
-  reticleGrowthSpeed: 8
+  reticleGrowthSpeed: 20
   reticleSortingOrder: 32767

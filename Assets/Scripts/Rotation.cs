@@ -5,7 +5,6 @@ using Assets.Scripts;
 
 public class Rotation : MonoBehaviour
 {
-
     private GameObject BodyManager;
 
     void Start()
@@ -17,7 +16,6 @@ public class Rotation : MonoBehaviour
     void FixedUpdate()
     {
         //Rotate planet around y axis, which is tilted with respect to world space
-        //gameObject.transform.Rotate(0, Mathf.Pow(PhysicsCalculation.distanceScalar, .666666666f) * (-2*Mathf.PI * Time.fixedDeltaTime / (BodyInitialzation.GetRotationPeriod(gameObject.name) * 3600)), 0);
-        gameObject.transform.Rotate(0, -Mathf.PI * 3600 * Time.fixedDeltaTime / BodyInitialzation.GetRotationPeriod(gameObject.name), 0);
+        gameObject.transform.Rotate(0, PhysicsCalculation.velocityScalar * (-1*Mathf.PI * Time.fixedDeltaTime / (BodyInitialzation.GetRotationPeriod(gameObject.name) * 1)), 0);
     }
 }
