@@ -133,10 +133,14 @@ namespace Assets.Scripts
 
             if (centralBody != "Sun")
             {
-                //Info Menu
-                menuPosition = PlayerTransform.position + Quaternion.AngleAxis(16, CameraTransform.right) * CameraTransform.forward * distance;
-                GameObject InfoMenu = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, CameraTransform.right) * CameraTransform.forward * distance   ));
-                InfoMenu.transform.SetParent(GameObject.Find("MenuManager").transform);
+                //Info Menus
+                menuPosition = PlayerTransform.position + Quaternion.AngleAxis(16, Menu1.transform.right) * CameraTransform.forward * distance;
+                GameObject InfoMenu1 = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, Menu1.transform.right) * CameraTransform.forward * distance   ));
+                InfoMenu1.transform.SetParent(GameObject.Find("MenuManager").transform);
+
+                menuPosition = PlayerTransform.position + Quaternion.AngleAxis(16, Menu2.transform.right) * CameraTransform.forward * -distance;
+                GameObject InfoMenu2 = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, Menu2.transform.right) * CameraTransform.forward * -distance   ));
+                InfoMenu2.transform.SetParent(GameObject.Find("MenuManager").transform);
 
                 SetInfoText(centralBody);
             }
@@ -228,18 +232,21 @@ namespace Assets.Scripts
                                         BodyInitialzation.GetOrbitObliquity(bodyName).ToString("f1")
                                        );
 
-            GameObject InfoMenu = GameObject.FindWithTag("InfoMenu");
-            Text[] TextObjects = InfoMenu.GetComponentsInChildren<Text>();
-
-            foreach (Text TextObject in TextObjects)
+            GameObject[] InfoMenus = GameObject.FindGameObjectsWithTag("InfoMenu");
+            foreach(GameObject InfoMenu in InfoMenus)
             {
-                if (TextObject.name == "Body Text")
+                Text[] TextObjects = InfoMenu.GetComponentsInChildren<Text>();
+
+                foreach (Text TextObject in TextObjects)
                 {
-                    TextObject.text = bodyName.ToUpper();
-                }
-                else if (TextObject.name == "Description Text")
-                {
-                    TextObject.text = text;
+                    if (TextObject.name == "Body Text")
+                    {
+                        TextObject.text = bodyName.ToUpper();
+                    }
+                    else if (TextObject.name == "Description Text")
+                    {
+                        TextObject.text = text;
+                    }
                 }
             }
         }
