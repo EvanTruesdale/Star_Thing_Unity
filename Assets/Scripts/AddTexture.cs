@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AddTexture : MonoBehaviour
@@ -7,9 +8,18 @@ public class AddTexture : MonoBehaviour
 
     void Start()
     {
+
         //Standard Textures
         string texturePath = gameObject.name + "_Texture";
-        GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture)Resources.Load(texturePath));
+        Texture MainTex = (Texture)Resources.Load(texturePath);
+        if(MainTex != null)
+        {
+            GetComponent<Renderer>().material.SetTexture("_MainTex", MainTex);
+        }
+        else
+        {
+            GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture)Resources.Load("Generic_Comet_Texture"));
+        }
 
         //Planetary Add-Ons
         if (gameObject.name == "Venus")
@@ -25,11 +35,6 @@ public class AddTexture : MonoBehaviour
             child.transform.localPosition = new Vector3(0, 0, -.5f);
             child.transform.localRotation = new Quaternion();
             child.transform.localScale = new Vector3(1, 1, 1);
-        }
-        if(gameObject.name == "Pallas" || gameObject.name == "Juno" || gameObject.name == "Vesta" || gameObject.name == "Halley's Comet")
-        {
-            texturePath = "Generic_Comet_Texture";
-            GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture)Resources.Load(texturePath));
         }
     }
 }

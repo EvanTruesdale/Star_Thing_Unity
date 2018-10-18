@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
@@ -21,6 +22,10 @@ public class RendererController : MonoBehaviour {
                 }
             }
             catch(MissingComponentException)
+            {
+                
+            }
+            catch(NullReferenceException)
             {
                 
             }
