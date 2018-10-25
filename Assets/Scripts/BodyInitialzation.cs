@@ -24,6 +24,7 @@ namespace Assets.Scripts
         static List<float> orbitObliquities = new List<float>();
         static List<float> scaledRadii = new List<float>();
         static List<string> centralBodies = new List<string>();
+        static List<float> longitudeOfAscendingNodes = new List<float>();
 
         //Access methods for TXT file data
         public static float GetScaledMass(string name)
@@ -87,6 +88,12 @@ namespace Assets.Scripts
             return centralBodies[index];
         }
 
+        public static float GetLongitudeOfAscendingNodes(string name)
+        {
+            int index = names.IndexOf(name);
+            return longitudeOfAscendingNodes[index];
+        }
+
         float velocityScalar;
         float distanceScalar;
         float massScalar;
@@ -143,10 +150,10 @@ namespace Assets.Scripts
 
 
             GameObject holderObject = Instantiate(BodyPrefab,
-                                                          new Vector3(0,
-                                                                      scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center))),
-                                                                      scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center)))),
-                                                          new Quaternion());
+                                                  new Vector3(scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]),
+                                                              scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center))),
+                                                              scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Cos(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center)))),
+                                                  new Quaternion());
 
             //Set rotation
             holderObject.transform.Rotate(new Vector3(1, 0, 0), orbitObliquities[i]);
@@ -158,8 +165,9 @@ namespace Assets.Scripts
 
             //Set velocity, calculated specifically for APHELION by program
             float velocityAdjustment = (2 / ((scaledDistances[i] * distanceScalar) * (1 + orbitalEccentricities[i]))) - 1 / (scaledDistances[i] * distanceScalar);
-            holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
-                                                                                  0, 0);
+            holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sin(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
+                                                                          0,
+                                                                          Mathf.Cos(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar);
             holderObject.GetComponent<Rigidbody>().velocity += CenterBody.GetComponent<Rigidbody>().velocity;
 
             //Set scale
@@ -193,8 +201,8 @@ namespace Assets.Scripts
 
                 //Add values to respective lists for body initialization
 
-                //NAME, MASS,    RADIUS, ROTATION PERIOD, SEMI-MAJOR AXIS, ORBITAL INCLINATION, ORBITAL ECCENTRICITY, OBLIQUITY, CENTRAL BODY
-                //      10^24kg  10^8m   1hours           10^8m            1degrees             (dimensionless)       1degrees
+                //NAME, MASS,    RADIUS, ROTATION PERIOD, SEMI-MAJOR AXIS, ORBITAL INCLINATION, ORBITAL ECCENTRICITY, OBLIQUITY, CENTRAL BODY, LONGITUDE OF ASCENDING NODE
+                //      10^24kg  10^8m   1hours           10^8m            1degrees             (dimensionless)       1degrees                 1degrees, relative, absolute doesn't matter
                 names.Add(values[0].Trim());
                 scaledMasses.Add(float.Parse(values[1]));
                 scaledRadii.Add(float.Parse(values[2]));
@@ -204,11 +212,16 @@ namespace Assets.Scripts
                 orbitalEccentricities.Add(float.Parse(values[6]));
                 orbitObliquities.Add(float.Parse(values[7]));
                 centralBodies.Add(values[8].Trim());
-                             
+                try
+                {
+                    longitudeOfAscendingNodes.Add(float.Parse(values[9]));
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    longitudeOfAscendingNodes.Add(0);
+                }
             }
         }
-
     }
-
 }
 
