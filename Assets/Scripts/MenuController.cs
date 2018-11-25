@@ -12,8 +12,8 @@ namespace Assets.Scripts
     {
 
         public static Transform PlayerTransform;
-        static GameObject MainMeunPrefab;
-        static GameObject InfoMeunPrefab;
+        static GameObject MainMenuPrefab;
+        static GameObject InfoMenuPrefab;
 
         static string centralBody = "Sun";
         string infoText = "";
@@ -27,8 +27,8 @@ namespace Assets.Scripts
         {
             //Get Player and Prefabs
             PlayerTransform = GameObject.Find("Player").transform;
-            MainMeunPrefab = Resources.Load<GameObject>("MainMenuPrefab");
-            InfoMeunPrefab = Resources.Load<GameObject>("InfoMenuPrefab");
+            MainMenuPrefab = Resources.Load<GameObject>("MainMenuPrefab");
+            InfoMenuPrefab = Resources.Load<GameObject>("InfoMenuPrefab");
             //Menu Parameters are disabled to start
             isMenuOpen = false;
             GameObject.Find("GvrReticlePointer").GetComponent<MeshRenderer>().enabled = false;
@@ -52,11 +52,6 @@ namespace Assets.Scripts
             }
             GameObject.Find(centralBody).GetComponent<Transform>().position = new Vector3(0, 0, 0);
 
-            foreach (GameObject Body in PhysicsCalculation.GetBodies())
-            {
-               //Body.GetComponentInChildren<TrailRenderer>().Clear();
-            }
-
             GameObject.Find("MenuManager").GetComponent<Transform>().position = PlayerTransform.position;
         }
 
@@ -69,7 +64,7 @@ namespace Assets.Scripts
             GameObject.Find("GvrReticlePointer").GetComponent<MeshRenderer>().enabled = true;
 
             //Get Dropdown Data (Bodies)
-            MainMeunPrefab.GetComponentInChildren<Dropdown>().ClearOptions();
+            MainMenuPrefab.GetComponentInChildren<Dropdown>().ClearOptions();
 
             //Add selected Body first
             foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
@@ -77,7 +72,7 @@ namespace Assets.Scripts
                 if (Body.name == centralBody)
                 {
                     Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
-                    MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                    MainMenuPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
                 }
             }
             //Add Parent Body
@@ -88,7 +83,7 @@ namespace Assets.Scripts
                     if(Body.name == BodyInitialzation.GetCentralBody(centralBody))
                     {
                         Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
-                        MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                        MainMenuPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
                     }
                 }
                 catch(ArgumentOutOfRangeException)
@@ -104,7 +99,7 @@ namespace Assets.Scripts
                     if(BodyInitialzation.GetCentralBody(Body.name) == centralBody)
                     {
                         Dropdown.OptionData data = new Dropdown.OptionData(Body.name);
-                        MainMeunPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
+                        MainMenuPrefab.GetComponentInChildren<Dropdown>().options.Add(data);
                     }
                 }
                 catch(ArgumentOutOfRangeException)
@@ -117,11 +112,11 @@ namespace Assets.Scripts
 
             //Forward Menu
             Vector3 menuPosition = PlayerTransform.position + CameraTransform.forward * distance;
-            GameObject Menu1 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(CameraTransform.forward));
+            GameObject Menu1 = Instantiate(MainMenuPrefab, menuPosition, Quaternion.LookRotation(CameraTransform.forward));
 
             //Backward Menu
             menuPosition = PlayerTransform.position + CameraTransform.forward * -distance;
-            GameObject Menu2 = Instantiate(MainMeunPrefab, menuPosition, Quaternion.LookRotation(-CameraTransform.forward));
+            GameObject Menu2 = Instantiate(MainMenuPrefab, menuPosition, Quaternion.LookRotation(-CameraTransform.forward));
 
 
             //Set Menus as children of MenuManager to keep them together and easy to move
@@ -135,11 +130,11 @@ namespace Assets.Scripts
             {
                 //Info Menus
                 menuPosition = PlayerTransform.position + Quaternion.AngleAxis(16, Menu1.transform.right) * CameraTransform.forward * distance;
-                GameObject InfoMenu1 = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, Menu1.transform.right) * CameraTransform.forward * distance   ));
+                GameObject InfoMenu1 = Instantiate(InfoMenuPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, Menu1.transform.right) * CameraTransform.forward * distance   ));
                 InfoMenu1.transform.SetParent(GameObject.Find("MenuManager").transform);
 
                 menuPosition = PlayerTransform.position + Quaternion.AngleAxis(16, Menu2.transform.right) * CameraTransform.forward * -distance;
-                GameObject InfoMenu2 = Instantiate(InfoMeunPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, Menu2.transform.right) * CameraTransform.forward * -distance   ));
+                GameObject InfoMenu2 = Instantiate(InfoMenuPrefab, menuPosition, Quaternion.LookRotation(    Quaternion.AngleAxis(16, Menu2.transform.right) * CameraTransform.forward * -distance   ));
                 InfoMenu2.transform.SetParent(GameObject.Find("MenuManager").transform);
 
                 SetInfoText(centralBody);
@@ -207,12 +202,31 @@ namespace Assets.Scripts
 
             foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
             {
-                if(Body.name != centralBody)
+
+                if (Body.name != centralBody)
                 {
                     Body.GetComponent<Transform>().position -= GameObject.Find(centralBody).GetComponent<Transform>().position;
                 }
+
             }
             GameObject.Find(centralBody).GetComponent<Transform>().position = new Vector3(0, 0, 0);
+
+            foreach (GameObject Body in PhysicsCalculation.GetBodies(true))
+            {
+
+                try
+                {
+                    Body.GetComponentInChildren<TrailRenderer>().enabled = false;
+                    Body.GetComponentInChildren<TrailRenderer>().Clear();
+                    Body.GetComponentInChildren<TrailRenderer>().enabled = true;
+                    print("Clear");
+
+                }
+                catch (MissingComponentException) { }
+                catch (NullReferenceException) { }
+
+            }
+
         }
 
         public static string GetCentralBody()

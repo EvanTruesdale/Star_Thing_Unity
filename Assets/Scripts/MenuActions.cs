@@ -76,27 +76,6 @@ public class MenuActions : MonoBehaviour
         string text = GetComponent<Dropdown>().options[GetComponent<Dropdown>().value].text;
         MenuController.SetCentralBody(text);
 
-        //Turn off Parent Trail
-        //try
-        //{
-        //    GameObject Parent = GameObject.Find(BodyInitialzation.GetCentralBody(text));
-        //    if(Parent.GetComponentInChildren<TrailRenderer>() != null)
-        //    {
-        //        Parent.GetComponentInChildren<TrailRenderer>().enabled = false;
-        //    }
-        //}
-        //catch(ArgumentOutOfRangeException)
-        //{
-            
-        //}
-
-        //Turn off Trail
-        //if(GameObject.Find(text).GetComponentInChildren<TrailRenderer>() != null)
-        //{
-        //    GameObject.Find(text).GetComponentInChildren<TrailRenderer>().enabled = false;
-        //}
-
-
         CloseMainMenu();
     }
 

@@ -21,14 +21,8 @@ public class RendererController : MonoBehaviour {
                     Body.GetComponent<MeshRenderer>().enabled = true;
                 }
             }
-            catch(MissingComponentException)
-            {
-                
-            }
-            catch(NullReferenceException)
-            {
-                
-            }
+            catch(MissingComponentException){}
+            catch(NullReferenceException){}
         }
 	}
 }
