@@ -54,7 +54,7 @@ namespace Assets.Scripts
 
             foreach (GameObject Body in PhysicsCalculation.GetBodies())
             {
-                Body.GetComponentInChildren<TrailRenderer>().Clear();
+               //Body.GetComponentInChildren<TrailRenderer>().Clear();
             }
 
             GameObject.Find("MenuManager").GetComponent<Transform>().position = PlayerTransform.position;

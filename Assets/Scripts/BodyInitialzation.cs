@@ -10,7 +10,7 @@ namespace Assets.Scripts
     public class BodyInitialzation : MonoBehaviour
     {
         
-        public GameObject BodyPrefab;
+        private GameObject BodyPrefab;
         private PhysicsCalculation Constants;
 
         //Values read from the TXT file
@@ -102,6 +102,8 @@ namespace Assets.Scripts
 
         void Start()
         {
+
+            BodyPrefab = (GameObject)Resources.Load("Body_Prefab");
 
             //Read data file in Assets
             ReadCSV();
