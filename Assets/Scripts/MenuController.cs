@@ -219,11 +219,9 @@ namespace Assets.Scripts
                     Body.GetComponentInChildren<TrailRenderer>().enabled = false;
                     Body.GetComponentInChildren<TrailRenderer>().Clear();
                     Body.GetComponentInChildren<TrailRenderer>().enabled = true;
-                    print("Clear");
-
                 }
-                catch (MissingComponentException) { }
-                catch (NullReferenceException) { }
+                catch (MissingComponentException e) { print(Body.name); print(e); }
+                catch (NullReferenceException e) { print(Body.name); print(e); }
 
             }
 

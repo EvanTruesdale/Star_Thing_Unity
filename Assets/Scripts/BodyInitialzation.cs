@@ -150,11 +150,10 @@ namespace Assets.Scripts
 
             GameObject CenterBody = GameObject.Find(center);
 
-
             GameObject holderObject = Instantiate(BodyPrefab,
-                                                  new Vector3(scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]),
+                                                  new Vector3(scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Cos(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center))),
                                                               scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center))),
-                                                              scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Sin(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Cos(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center)))),
+                                                              scaledDistances[i] * (1 + orbitalEccentricities[i]) * Mathf.Cos(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Cos(Mathf.Deg2Rad * (orbitalInclinations[i] - GetOrbitObliquity(center)))),
                                                   new Quaternion());
 
             //Set rotation
@@ -167,9 +166,10 @@ namespace Assets.Scripts
 
             //Set velocity, calculated specifically for APHELION by program
             float velocityAdjustment = (2 / ((scaledDistances[i] * distanceScalar) * (1 + orbitalEccentricities[i]))) - 1 / (scaledDistances[i] * distanceScalar);
-            holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Sin(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
+
+            holderObject.GetComponent<Rigidbody>().velocity = new Vector3(Mathf.Cos(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar,
                                                                           0,
-                                                                          Mathf.Cos(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar);
+                                                                          -Mathf.Sin(Mathf.Deg2Rad * longitudeOfAscendingNodes[i]) * Mathf.Sqrt(PhysicsCalculation.G * CenterBody.GetComponent<Rigidbody>().mass * massScalar * velocityAdjustment) / velocityScalar);
             holderObject.GetComponent<Rigidbody>().velocity += CenterBody.GetComponent<Rigidbody>().velocity;
 
             //Set scale
