@@ -732,7 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1036,37 +1036,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Sun
-      m_Image: {fileID: 0}
-    - m_Text: Mercury
-      m_Image: {fileID: 0}
-    - m_Text: Venus
-      m_Image: {fileID: 0}
     - m_Text: Earth
       m_Image: {fileID: 0}
-    - m_Text: Mars
+    - m_Text: Sun
       m_Image: {fileID: 0}
-    - m_Text: Jupiter
-      m_Image: {fileID: 0}
-    - m_Text: Saturn
-      m_Image: {fileID: 0}
-    - m_Text: Uranus
-      m_Image: {fileID: 0}
-    - m_Text: Neptune
-      m_Image: {fileID: 0}
-    - m_Text: Pluto
-      m_Image: {fileID: 0}
-    - m_Text: Tesla Roadster
-      m_Image: {fileID: 0}
-    - m_Text: Ceres
-      m_Image: {fileID: 0}
-    - m_Text: Pallas
-      m_Image: {fileID: 0}
-    - m_Text: Juno
-      m_Image: {fileID: 0}
-    - m_Text: Vesta
-      m_Image: {fileID: 0}
-    - m_Text: Halley's Comet
+    - m_Text: Moon
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1640,7 +1614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sun
+  m_Text: 
 --- !u!114 &114724029298832684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1665,7 +1639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

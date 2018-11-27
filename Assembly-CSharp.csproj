@@ -149,6 +149,7 @@
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
     <Compile Include="Assets\Scripts\AddTexture.cs" />
     <Compile Include="Assets\Scripts\BodyInitialzation.cs" />
+    <Compile Include="Assets\Scripts\LabelActions.cs" />
     <Compile Include="Assets\Scripts\MenuActions.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\PhysicsCalculation.cs" />
